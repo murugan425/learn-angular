@@ -43,4 +43,6 @@ Murugan_Nagarajan@PRCSGI1671L MINGW64 ~
 $ clip < ~/.ssh/id_rsa.pub
 
 Murugan_Nagarajan@PRCSGI1671L MINGW64 ~
-$
+$ ssh -T git@github.com
+Hi murugan425! You've successfully authenticated, but GitHub does not provide shell access.
+
