@@ -14,9 +14,12 @@ import { EventbindComponent } from './eventbind/eventbind.component';
 import { EventComponent } from './event/event.component';
 import { EventfilterComponent } from './eventfilter/eventfilter.component';
 import { VariablebindComponent } from './variablebind/variablebind.component';
+import { CustompipesComponent } from './custompipes/custompipes.component';
+import { SummaryPipe } from './custompipes/summary.pipe';
 
 @NgModule({
   declarations: [
+    // COMPONENT DECLARATIONS
     AppComponent,
     CourseComponent,
     DisplayComponent,
@@ -27,13 +30,19 @@ import { VariablebindComponent } from './variablebind/variablebind.component';
     EventbindComponent,
     EventComponent,
     EventfilterComponent,
-    VariablebindComponent
+    VariablebindComponent,
+    CustompipesComponent,
+
+    // PIPES DECLARATIONS
+    SummaryPipe
   ],
   imports: [
+    // MODULES DEPENDENCY
     BrowserModule,
     FormsModule
   ],
   providers: [
+    // SERVICES BEING USED
     CourseService
   ],
   bootstrap: [AppComponent]
