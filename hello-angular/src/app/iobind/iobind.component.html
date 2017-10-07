@@ -1,4 +1,8 @@
 <h5> Implementation of creating a Resuable Favorite component </h5>
 <p> 
     <app-favoritestar></app-favoritestar>
-</p>
+</p> 
+'{{courseAngular.title}}'  
+<app-favoritestar [favoriteflag]="courseAngular.favflag" (marked)="printChange($event)" (favoriteclick)="favoriteChange($event)"></app-favoritestar>
+'{{courseJava.title}}'  
+<app-favoritestar [favoriteflag]="courseJava.favflag"  (marked)="printChange($event)" (favoriteclick)="favoriteChange($event)"></app-favoritestar>

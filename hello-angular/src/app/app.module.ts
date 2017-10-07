@@ -38,8 +38,8 @@ import { IobindComponent } from './iobind/iobind.component';
     // PIPES DECLARATIONS
     SummaryPipe,
 
+    // COMPONENT DECLARATIONS
     FavoritestarComponent,
-
     IobindComponent
   ],
   imports: [
