@@ -16,6 +16,8 @@ import { EventfilterComponent } from './eventfilter/eventfilter.component';
 import { VariablebindComponent } from './variablebind/variablebind.component';
 import { CustompipesComponent } from './custompipes/custompipes.component';
 import { SummaryPipe } from './custompipes/summary.pipe';
+import { FavoritestarComponent } from './favoritestar/favoritestar.component';
+import { IobindComponent } from './iobind/iobind.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,11 @@ import { SummaryPipe } from './custompipes/summary.pipe';
     CustompipesComponent,
 
     // PIPES DECLARATIONS
-    SummaryPipe
+    SummaryPipe,
+
+    FavoritestarComponent,
+
+    IobindComponent
   ],
   imports: [
     // MODULES DEPENDENCY
