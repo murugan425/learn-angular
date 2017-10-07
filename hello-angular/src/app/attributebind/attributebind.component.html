@@ -1,0 +1,9 @@
+<table>
+  <tr>
+    <!-- <td [colspan] = 'colspanVal'></td> --> 
+    <!-- Results in error as there is no such DOM property -->
+    <!-- So, target the html attribute instead of dom object property -->
+    <td [attr.colspan] = 'colspanVal'> <h2> TABLE TD - ATTRIBUTE BINDING EXAMPLE </h2> 
+      <h6>INSPECT & notice the colspan attribute added in this td tag which is not a DOM property</h6> </td>
+  </tr>
+</table>
