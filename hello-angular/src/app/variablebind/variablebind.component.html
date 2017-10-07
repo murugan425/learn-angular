@@ -1,0 +1,5 @@
+<h6>Different ways of implementing two-way varibale binding between component & view.. 
+    [(ngModel)] is the current better way</h6>
+<input #username (keyup.enter) = "onKeyEnterParam(username.value)"/>
+<input [value] = "email" (keyup.enter) = "email =$event.target.value; onKeyEnterBind()"/>
+<input [(ngModel)] = "mobilenum" (keyup.enter) = "onKeyEnterAndBind()"/>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -12,6 +13,7 @@ import { StylebindComponent } from './stylebind/stylebind.component';
 import { EventbindComponent } from './eventbind/eventbind.component';
 import { EventComponent } from './event/event.component';
 import { EventfilterComponent } from './eventfilter/eventfilter.component';
+import { VariablebindComponent } from './variablebind/variablebind.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { EventfilterComponent } from './eventfilter/eventfilter.component';
     StylebindComponent,
     EventbindComponent,
     EventComponent,
-    EventfilterComponent
+    EventfilterComponent,
+    VariablebindComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     CourseService
