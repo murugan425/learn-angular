@@ -9,6 +9,9 @@ import { PropertybindComponent } from './propertybind/propertybind.component';
 import { AttributebindComponent } from './attributebind/attributebind.component';
 import { ClassbindComponent } from './classbind/classbind.component';
 import { StylebindComponent } from './stylebind/stylebind.component';
+import { EventbindComponent } from './eventbind/eventbind.component';
+import { EventComponent } from './event/event.component';
+import { EventfilterComponent } from './eventfilter/eventfilter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { StylebindComponent } from './stylebind/stylebind.component';
     PropertybindComponent,
     AttributebindComponent,
     ClassbindComponent,
-    StylebindComponent
+    StylebindComponent,
+    EventbindComponent,
+    EventComponent,
+    EventfilterComponent
   ],
   imports: [
     BrowserModule
