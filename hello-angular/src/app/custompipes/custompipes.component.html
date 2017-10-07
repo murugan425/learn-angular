@@ -1,0 +1,9 @@
+<h6>Examples of different way of PIPES Formatting</h6>
+NAME  :{{user.name | uppercase}} <br/>
+AGE   :{{user.age | number }} <br/>
+SAL   :{{user.salary | currency : 'INR' : true}} <br/>
+DOB   :{{user.dob | date: 'shortDate'}} <br/>
+TAX   :{{user.taxrate | number : '3.1-2'}} <br/>
+<h6>Custom Pipe created to summarize a long description</h6>
+DESCRIPTION: {{user.profiledesc | summary : 50}}
+
