@@ -18,6 +18,7 @@ import { CustompipesComponent } from './custompipes/custompipes.component';
 import { SummaryPipe } from './custompipes/summary.pipe';
 import { FavoritestarComponent } from './favoritestar/favoritestar.component';
 import { IobindComponent } from './iobind/iobind.component';
+import { BootstrappanelComponent } from './bootstrappanel/bootstrappanel.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { IobindComponent } from './iobind/iobind.component';
 
     // COMPONENT DECLARATIONS
     FavoritestarComponent,
-    IobindComponent
+    IobindComponent,
+    BootstrappanelComponent
   ],
   imports: [
     // MODULES DEPENDENCY
