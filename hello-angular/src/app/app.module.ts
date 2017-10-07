@@ -7,6 +7,8 @@ import { CourseService } from './course/course.service';
 import { DisplayComponent } from './display/display.component';
 import { PropertybindComponent } from './propertybind/propertybind.component';
 import { AttributebindComponent } from './attributebind/attributebind.component';
+import { ClassbindComponent } from './classbind/classbind.component';
+import { StylebindComponent } from './stylebind/stylebind.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AttributebindComponent } from './attributebind/attributebind.component'
     CourseComponent,
     DisplayComponent,
     PropertybindComponent,
-    AttributebindComponent
+    AttributebindComponent,
+    ClassbindComponent,
+    StylebindComponent
   ],
   imports: [
     BrowserModule
