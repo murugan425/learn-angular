@@ -1,0 +1,3 @@
+<ng-content select=".tweetContent"></ng-content>
+<span class='glyphicon glyphicon-heart' [class.liked] = "isLiked" (click) = "markLiked();"></span>
+<span>{{likeCount}}</span>
