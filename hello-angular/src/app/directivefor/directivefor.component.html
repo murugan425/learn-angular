@@ -1,0 +1,11 @@
+<p>
+  <button class="btn btn-primary btn-xs" (click)="onRefresh()">Refresh </button>
+  <button class="btn btn-primary btn-xs" (click)="onAdd()">Add</button>
+</p>
+<ul>
+  <li *ngFor="let course of courses; index as i; even as isEven; trackBy: trackCourse ">
+      <button class="btn btn-primary btn-xs" (click)="onRemove(course)">Remove</button>
+      {{i+1}} - {{course.name}} 
+      <span *ngIf="!isEven"><small>even row</small></span>
+  </li>
+</ul>

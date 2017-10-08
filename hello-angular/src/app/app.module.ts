@@ -20,6 +20,12 @@ import { FavoritestarComponent } from './favoritestar/favoritestar.component';
 import { IobindComponent } from './iobind/iobind.component';
 import { BootstrappanelComponent } from './bootstrappanel/bootstrappanel.component';
 import { LikeheartComponent } from './likeheart/likeheart.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { DirectiveifComponent } from './directiveif/directiveif.component';
+import { DirectivehiddenComponent } from './directivehidden/directivehidden.component';
+import { DirectiveswitchComponent } from './directiveswitch/directiveswitch.component';
+import { DirectiveforComponent } from './directivefor/directivefor.component';
+import { DirectiveclassComponent } from './directiveclass/directiveclass.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,13 @@ import { LikeheartComponent } from './likeheart/likeheart.component';
     FavoritestarComponent,
     IobindComponent,
     BootstrappanelComponent,
-    LikeheartComponent
+    LikeheartComponent,
+    DirectivesComponent,
+    DirectiveifComponent,
+    DirectivehiddenComponent,
+    DirectiveswitchComponent,
+    DirectiveforComponent,
+    DirectiveclassComponent
   ],
   imports: [
     // MODULES DEPENDENCY

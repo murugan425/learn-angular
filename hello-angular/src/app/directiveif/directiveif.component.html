@@ -1,0 +1,13 @@
+<!-- Old way of implementaiton in HTML - Using a IF and a ELSE part -->
+<div *ngIf = "courses.length > 0">
+  List of Courses..,
+</div>
+<div *ngIf = "courses.length == 0">
+  No Courses added yet..,
+</div>
+
+<!-- New way of implementation in HTML - Using ng-template -->
+<div *ngIf = "courses.length > 0 then listcourses else emptycourse "></div>
+<ng-template #listcourses>Better way to implement ngIf - List of Courses..,</ng-template>
+<ng-template #emptycourse>Better way to implement ngIf - No Courses added yet..,</ng-template>
+
