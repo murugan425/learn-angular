@@ -1,0 +1,7 @@
+.glyphicon-heart {
+    color: #ccc;
+}
+
+.glyphicon-heart.liked {
+    color: deeppink;
+}

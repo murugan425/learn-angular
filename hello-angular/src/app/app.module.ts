@@ -16,6 +16,16 @@ import { EventfilterComponent } from './eventfilter/eventfilter.component';
 import { VariablebindComponent } from './variablebind/variablebind.component';
 import { CustompipesComponent } from './custompipes/custompipes.component';
 import { SummaryPipe } from './custompipes/summary.pipe';
+import { FavoritestarComponent } from './favoritestar/favoritestar.component';
+import { IobindComponent } from './iobind/iobind.component';
+import { BootstrappanelComponent } from './bootstrappanel/bootstrappanel.component';
+import { LikeheartComponent } from './likeheart/likeheart.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { DirectiveifComponent } from './directiveif/directiveif.component';
+import { DirectivehiddenComponent } from './directivehidden/directivehidden.component';
+import { DirectiveswitchComponent } from './directiveswitch/directiveswitch.component';
+import { DirectiveforComponent } from './directivefor/directivefor.component';
+import { DirectiveclassComponent } from './directiveclass/directiveclass.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +44,19 @@ import { SummaryPipe } from './custompipes/summary.pipe';
     CustompipesComponent,
 
     // PIPES DECLARATIONS
-    SummaryPipe
+    SummaryPipe,
+
+    // COMPONENT DECLARATIONS
+    FavoritestarComponent,
+    IobindComponent,
+    BootstrappanelComponent,
+    LikeheartComponent,
+    DirectivesComponent,
+    DirectiveifComponent,
+    DirectivehiddenComponent,
+    DirectiveswitchComponent,
+    DirectiveforComponent,
+    DirectiveclassComponent
   ],
   imports: [
     // MODULES DEPENDENCY

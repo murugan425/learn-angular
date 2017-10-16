@@ -1,0 +1,37 @@
+<!-- This component acts as a consumer/client/user of other reusable component created in this project -->
+<h5> Implementation of creating a Resuable Favorite component </h5>
+<p> 
+    <app-favoritestar></app-favoritestar>
+</p> 
+'{{courseAngular.title}}'  
+<app-favoritestar [favoriteflag]="courseAngular.favflag" (marked)="printChange($event)" (favoriteclick)="favoriteChange($event)"></app-favoritestar>
+'{{courseJava.title}}'  
+<app-favoritestar [favoriteflag]="courseJava.favflag"  (marked)="printChange($event)" (favoriteclick)="favoriteChange($event)"></app-favoritestar>
+
+<app-bootstrappanel>
+    <ng-container class="headingtitle"><h2>Header/Title 1</h2></ng-container>
+    <ng-container class="bodycontent">
+        <h3>Body 1</h3> Some Text goes here..................,
+    </ng-container>
+</app-bootstrappanel>
+
+<app-bootstrappanel>
+    <ng-container class="headingtitle"><h2>Header/Title 2</h2></ng-container>
+    <ng-container class="bodycontent">
+        <h3>Body 2</h3> Some Text goes here..................,
+    </ng-container>
+</app-bootstrappanel>
+
+<app-likeheart [likes-count]="tweetByUser1.likeCount" [like-indicator]="tweetByUser1.isLiked" 
+        (like-click) = "likeChange($event)">
+    <ng-container class="tweetContent">
+        {{tweetByUser1.textContent}}
+    </ng-container>
+</app-likeheart><br/>
+
+<app-likeheart [likes-count]="tweetByUser2.likeCount" [like-indicator]="tweetByUser2.isLiked" 
+        (like-click) = "likeChange($event)">
+    <ng-container class="tweetContent">
+        {{tweetByUser2.textContent}}
+    </ng-container>
+</app-likeheart><br/>
