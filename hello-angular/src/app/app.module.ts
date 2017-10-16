@@ -26,6 +26,8 @@ import { DirectivehiddenComponent } from './directivehidden/directivehidden.comp
 import { DirectiveswitchComponent } from './directiveswitch/directiveswitch.component';
 import { DirectiveforComponent } from './directivefor/directivefor.component';
 import { DirectiveclassComponent } from './directiveclass/directiveclass.component';
+import { FormsComponent } from './forms/forms.component';
+import { FormcontactComponent } from './formcontact/formcontact.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { DirectiveclassComponent } from './directiveclass/directiveclass.compone
     DirectivehiddenComponent,
     DirectiveswitchComponent,
     DirectiveforComponent,
-    DirectiveclassComponent
+    DirectiveclassComponent,
+    FormsComponent,
+    FormcontactComponent
   ],
   imports: [
     // MODULES DEPENDENCY
