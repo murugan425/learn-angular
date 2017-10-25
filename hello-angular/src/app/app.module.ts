@@ -26,6 +26,8 @@ import { DirectivehiddenComponent } from './directivehidden/directivehidden.comp
 import { DirectiveswitchComponent } from './directiveswitch/directiveswitch.component';
 import { DirectiveforComponent } from './directivefor/directivefor.component';
 import { DirectiveclassComponent } from './directiveclass/directiveclass.component';
+import { FormsComponent } from './forms/forms.component';
+import { FormcontactComponent } from './formcontact/formcontact.component';
 import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
@@ -58,6 +60,8 @@ import { ZippyComponent } from './zippy/zippy.component';
     DirectiveswitchComponent,
     DirectiveforComponent,
     DirectiveclassComponent,
+    FormsComponent,
+    FormcontactComponent,
     ZippyComponent
   ],
   imports: [
