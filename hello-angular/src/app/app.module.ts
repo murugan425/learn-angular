@@ -28,6 +28,7 @@ import { DirectiveforComponent } from './directivefor/directivefor.component';
 import { DirectiveclassComponent } from './directiveclass/directiveclass.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormcontactComponent } from './formcontact/formcontact.component';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { FormcontactComponent } from './formcontact/formcontact.component';
     DirectiveforComponent,
     DirectiveclassComponent,
     FormsComponent,
-    FormcontactComponent
+    FormcontactComponent,
+    ZippyComponent
   ],
   imports: [
     // MODULES DEPENDENCY
