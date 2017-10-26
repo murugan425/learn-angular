@@ -1,13 +1,15 @@
-<form #form="ngForm" (ngSubmit)="submitForm(form)">
-  <div ngModelGroup = "contact" #contact="ngModelGroup">
-    <div class="alert alert-danger" *ngIf="contact.touched && !contact.valid" >...</div>
+<form #contactform="ngForm" (ngSubmit)="submitForm(contactform)" (click)=log(contactform)>
+  <div ngModelGroup = "contactdetails" #contactdetails="ngModelGroup" (click)=log(contactdetails)>
+    <div class="alert alert-danger" *ngIf="contactdetails.touched && !contactdetails.valid" >
+      Error in Contact Form-Please check before submit.</div>
     <div class="form-group">
       <label for="firstName">First Name</label>
       <input required minlength="3" maxlength="10" ngModel name="firstName" id="firstName" #firstName="ngModel" 
-        (change) = "log(firstName)" type="text" class="form-control">
+        (change) = "log(firstName)" (click)=log(firstName) type="text" class="form-control">
       <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid" >
         <div *ngIf="firstName.errors.required">First Name is Mandatory</div>
-        <div *ngIf="firstName.errors.minlength">First Name should be minimum {{firstName.errors.minlength.requiredLength}} characters</div>
+        <div *ngIf="firstName.errors.minlength">First Name should be minimum 
+          {{firstName.errors.minlength.requiredLength}} characters</div>
         <div *ngIf="firstName.errors.maxlength">First Name should be maximum 10 characters</div>
       </div>
       <div class="checkbox">
@@ -36,6 +38,6 @@
     <label for="comment">Comment</label>
     <textarea ngModel name="comment" id="comment" cols="10" rows="3" class="form-control"></textarea>
   </div>
-  <p>{{ form.value | json }}</p>
-  <button class="btn btn-primary btn-sm" [disabled]="!form.valid">Submit </button>
+  <p>{{ contactform.value | json }}</p>
+  <button class="btn btn-primary btn-sm" [disabled]="!contactform.valid">Submit </button>
 </form>
