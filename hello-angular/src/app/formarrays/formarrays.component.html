@@ -1,0 +1,11 @@
+<form>
+  <label for="newCourse"></label>
+  <input type="text" ngModel class="form-control" name="course" (keyup.enter)="addNewCourses(course)" #course>
+  <ul class="list-group">
+    <li *ngFor="let courseControl of coursesArray.controls" class="list-group-item" (click)="removeCourse(courseControl)">
+        {{courseControl.value}}
+    </li>
+  </ul>
+  <!-- TODO - Try to implement the same above functionality using ngModel directive 
+  <input type="text" ngModel class="form-control" name="course1" (click)="log(course1)" #course1 = "ngModel"> -->
+</form>

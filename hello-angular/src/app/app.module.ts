@@ -31,6 +31,7 @@ import { FormcontactComponent } from './formcontact/formcontact.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { FormcourseComponent } from './formcourse/formcourse.component';
 import { FormsignupComponent } from './formsignup/formsignup.component';
+import { FormarraysComponent } from './formarrays/formarrays.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { FormsignupComponent } from './formsignup/formsignup.component';
     FormcontactComponent,
     ZippyComponent,
     FormcourseComponent,
-    FormsignupComponent
+    FormsignupComponent,
+    FormarraysComponent
   ],
   imports: [
     // MODULES DEPENDENCY
