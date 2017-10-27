@@ -9,14 +9,16 @@ import { FormGroup, FormControl, Validators, ValidatorFn} from '@angular/forms';
 })
 export class FormsignupComponent implements OnInit {
   signupform = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(5),
-      UserNameValidators.noBlankSpace] // ,
-      // TODO: Try to fix the Async validators overriding the normal validation errors.
-      // UserNameValidators.uniqueUserName
-    ),
-    password: new FormControl('', Validators.required)
+    account: new FormGroup({
+      username: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5),
+        UserNameValidators.noBlankSpace] // ,
+        // TODO: Try to fix the Async validators overriding the normal validation errors.
+        // UserNameValidators.uniqueUserName
+      ),
+      password: new FormControl('', Validators.required)
+    })
   });
   constructor() { }
 
@@ -24,11 +26,11 @@ export class FormsignupComponent implements OnInit {
   }
 
   get username() {
-    return this.signupform.get('username');
+    return this.signupform.get('account.username');
   }
 
   get password() {
-    return this.signupform.get('password');
+    return this.signupform.get('account.password');
   }
 
   log(x) {
