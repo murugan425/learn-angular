@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -29,6 +29,9 @@ import { DirectiveclassComponent } from './directiveclass/directiveclass.compone
 import { FormsComponent } from './forms/forms.component';
 import { FormcontactComponent } from './formcontact/formcontact.component';
 import { ZippyComponent } from './zippy/zippy.component';
+import { FormcourseComponent } from './formcourse/formcourse.component';
+import { FormsignupComponent } from './formsignup/formsignup.component';
+import { FormarraysComponent } from './formarrays/formarrays.component';
 
 @NgModule({
   declarations: [
@@ -62,12 +65,16 @@ import { ZippyComponent } from './zippy/zippy.component';
     DirectiveclassComponent,
     FormsComponent,
     FormcontactComponent,
-    ZippyComponent
+    ZippyComponent,
+    FormcourseComponent,
+    FormsignupComponent,
+    FormarraysComponent
   ],
   imports: [
     // MODULES DEPENDENCY
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     // SERVICES BEING USED

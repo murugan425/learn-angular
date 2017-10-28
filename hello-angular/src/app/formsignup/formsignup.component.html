@@ -1,0 +1,37 @@
+<form [formGroup]="signupform" (ngSubmit)="signup()">
+    <div *ngIf="signupform.errors" class="alert alert-warning">        
+        <div *ngIf="signupform.errors.invalidSignUp">{{signupform.errors.invalidSignUpMsg}}</div>
+    </div>
+    <div formGroupName="account">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input 
+                formControlName = "username"
+                id="username" 
+                type="text" 
+                class="form-control"
+                (change) = log(username)>
+            <div class="alert alert-info" *ngIf="username.pending">Validation in progress</div>
+            <div class="alert alert-danger" *ngIf="username.touched && !username.valid">
+            <div *ngIf="username.errors.required">User Name is required</div>
+            <div *ngIf="username.errors.minlength">User Name should be minimum 
+                {{username.errors.minlength.requiredLength}} character</div>
+            <div *ngIf="username.errors.noblankspace">User Name cannot contain blank space</div>
+            <div *ngIf="username.errors.nouniqueness">User Name already exists.</div>
+            <div *ngIf="username.errors.invalidUserName">User Name validation failed.</div>          
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                formControlName = "password"
+                id="password" 
+                type="text" 
+                class="form-control"
+                (change) = log(username)>
+            <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+            Password is required</div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-sm" type="submit" [disabled]="!signupform.valid">Sign Up</button>
+</form>
