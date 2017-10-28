@@ -1,3 +1,4 @@
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { FormcourseComponent } from './formcourse/formcourse.component';
 import { FormsignupComponent } from './formsignup/formsignup.component';
 import { FormarraysComponent } from './formarrays/formarrays.component';
+import { HttppostsComponent } from './httpposts/httpposts.component';
 
 @NgModule({
   declarations: [
@@ -68,13 +70,15 @@ import { FormarraysComponent } from './formarrays/formarrays.component';
     ZippyComponent,
     FormcourseComponent,
     FormsignupComponent,
-    FormarraysComponent
+    FormarraysComponent,
+    HttppostsComponent
   ],
   imports: [
     // MODULES DEPENDENCY
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [
     // SERVICES BEING USED
