@@ -8,12 +8,19 @@ import { Http } from '@angular/http';
 })
 export class HttppostsComponent implements OnInit {
   typiCodePostResponse: any[];
+  courses: any[];
 
   constructor(http: Http) {
     http.get('http://jsonplaceholder.typicode.com/posts')
     .subscribe(response => {
           console.log(response.json());
           this.typiCodePostResponse = response.json();
+    });
+
+    http.get('/api/courses')
+    .subscribe(response => {
+          console.log(response.json());
+          this.courses = response.json();
     });
   }
 

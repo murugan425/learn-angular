@@ -1,4 +1,4 @@
-<div class="table-responsive" id="typicodeposts">
+<div class="table-responsive" id="typicodeposts" hidden>
   <table class="table table-bordered table-hover table-striped">
   <thead> 
     <tr><th>#</th><th>User</th><th>Title</th><th>Body</th></tr> 
@@ -8,4 +8,14 @@
   </tbody>
 </table>
 </div>
-  
+
+<div class="table-responsive" id="coursetable">
+  <table class="table table-bordered table-hover table-striped">
+  <thead> 
+    <tr><th>#</th><th>Course Id</th><th>Course Title</th><th>Course Category</th></tr> 
+  </thead> 
+  <tbody *ngFor = "let course of courses"> 
+    <tr><td>{{course.id}}</td><td>{{course.id}}</td><td>{{course.title}}</td><td>{{course.category}}</td></tr>
+  </tbody>
+</table>
+</div>
