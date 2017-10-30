@@ -41,8 +41,7 @@ export class HttppostsComponent implements OnInit {
           this.countries = response.json();
         },
         error => {
-          alert('Unexpected Error occurred.');
-          console.log(error);
+          throw error; // Will be handled by the Global AppErrorHandler class
         });
   }
 
@@ -58,8 +57,7 @@ export class HttppostsComponent implements OnInit {
           if (error instanceof BadRequestError) {
             // this.form.setError(error.);
           } else {
-            alert('Unexpected Error occurred.');
-            console.log(error);
+            throw error;
           }
         });
     input.value = '';
@@ -80,8 +78,7 @@ export class HttppostsComponent implements OnInit {
             alert('The Input data is invalid');
             console.log(error);
           } else {
-            alert('Unexpected Error occurred.');
-            console.log(error);
+            throw error;
           }
         });
   }
@@ -98,8 +95,7 @@ export class HttppostsComponent implements OnInit {
             alert('This country doesn\'t exists in the system.');
             console.log(error);
           } else {
-            alert('Unexpected Error occurred.');
-            console.log(error);
+            throw error;
           }
         });
     this.getCountries();

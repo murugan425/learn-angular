@@ -1,7 +1,8 @@
+import { AppErrorHandler } from './common/errors/app-error-handler';
 import { HttppostsService } from './httpposts/httpposts.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -86,7 +87,9 @@ import { HttpcourseformComponent } from './httpcourseform/httpcourseform.compone
   providers: [
     // SERVICES BEING USED
     CourseService,
-    HttppostsService
+    HttppostsService,
+    // MAKE use of APPERRORHANDLER instead of angular defaulr ERRORHANDLER
+    { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

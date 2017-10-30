@@ -33,7 +33,7 @@ export class HttppostsService {
       });
   }
   updateCountry(country) {
-    return this.http.put('api/countries' + '/' + 4567, JSON.stringify(country))
+    return this.http.put('api/countries' + '/' + country.id, JSON.stringify(country))
       .catch((error: Response) => {
         if (error.status === 400) {
           return Observable.throw(new BadRequestError(error));
