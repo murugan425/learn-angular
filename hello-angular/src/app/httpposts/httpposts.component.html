@@ -32,8 +32,12 @@
     <input type="text" ngModel class="form-control" name="countryEntry" (keyup.enter)="addCountry(countryEntry)" #countryEntry>
     <ul class="list-group">
       <li *ngFor="let country of countries" class="list-group-item">
-        <button class="btn btn-primary btn-xs" (click)="updateCountry(country)">Update</button>
-        <button class="btn btn-primary btn-xs" (click)="deleteCountry(country)">Delete</button>        
+        <button class="btn btn-primary btn-xs" (click)="updateCountry(country)">
+            <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
+        </button>
+        <button class="btn btn-primary btn-xs" (click)="deleteCountry(country)">
+            <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
+        </button>        
         {{country.name}}
       </li>
     </ul>
