@@ -1,3 +1,6 @@
+import { BadRequestError } from './../common/errors/bad-request-error';
+import { NotFoundError } from './../common/errors/not-found-error';
+import { AppError } from './../common/errors/app-error';
 import { HttppostsService } from './httpposts.service';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
@@ -52,8 +55,8 @@ export class HttppostsComponent implements OnInit {
           console.log(response.json());
         },
         (error: Response) => {
-          if (error.status === 400) {
-            // this.form.setError(errors.json());
+          if (error instanceof BadRequestError) {
+            // this.form.setError(error.);
           } else {
             alert('Unexpected Error occurred.');
             console.log(error);
@@ -70,8 +73,11 @@ export class HttppostsComponent implements OnInit {
           console.log(response.json());
         },
         error => {
-          if (error.status === 404) {
+          if (error instanceof NotFoundError) {
             alert('This country doesn\'t exists in the system.');
+            console.log(error);
+          } else if (error instanceof BadRequestError) {
+            alert('The Input data is invalid');
             console.log(error);
           } else {
             alert('Unexpected Error occurred.');
@@ -87,8 +93,8 @@ export class HttppostsComponent implements OnInit {
           console.log('Delete' + country);
           this.countries.splice(this.countries.indexOf(country));
         },
-        (error: Response) => {
-          if (error.status === 404) {
+        (error: AppError) => {
+          if (error instanceof NotFoundError) {
             alert('This country doesn\'t exists in the system.');
             console.log(error);
           } else {
