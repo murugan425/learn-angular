@@ -24,14 +24,18 @@ export class HttppostsComponent implements OnInit {
           this.courses = response.json();
     });
 
-    http.get('/api/countries')
+    this.getCountries();
+  }
+
+  ngOnInit() {
+  }
+
+  getCountries() {
+    this.http.get('/api/countries')
     .subscribe(response => {
           console.log(response.json());
           this.countries = response.json();
     });
-  }
-
-  ngOnInit() {
   }
 
   addCountry(input: HTMLInputElement) {
@@ -43,5 +47,23 @@ export class HttppostsComponent implements OnInit {
       }
     );
     input.value = '';
+  }
+
+  updateCountry(country) {
+    const countryName: string = country.name + ' Updated';
+    this.http.put('api/countries' + '/' + country.id, JSON.stringify({id: country.id, name: countryName}))
+      .subscribe(response => {
+        console.log(response.json());
+      }
+    );
+  }
+
+  deleteCountry(country) {
+    this.http.delete('api/countries' + '/' + country.id)
+      .subscribe(response => {
+        console.log('Delete' + country);
+        this.countries.splice(this.countries.indexOf(country));
+      });
+      this.getCountries();
   }
 }
