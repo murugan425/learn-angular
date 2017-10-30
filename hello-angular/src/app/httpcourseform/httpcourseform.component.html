@@ -1,0 +1,12 @@
+<form #courseForm ="ngForm" (ngSubmit)="addCourse(courseDetails)" (click)="log(courseForm)">
+  <div class="form-group" ngModelGroup = "courseDetails" #courseDetails (click)="log(courseDetails)">
+      <!-- TODO: Implement the UI validations -->
+      <label for="courseId">Course Id</label>
+      <input required type="text" ngModel name="courseId" id="courseId" class="form-control" 
+        #courseName="ngModel" (click)="log(courseId)" maxlength="1">
+      <label for="courseName">Course Title</label>
+      <input required type="text" ngModel name="courseName" id="courseName" class="form-control" 
+         #courseName="ngModel" (click)="log(courseName)" minlength="3" maxlength="10">
+  </div>
+  <button class="btn btn-primary btn-sm" type="submit" [disabled]="!courseForm.valid">Add Course</button>
+</form>

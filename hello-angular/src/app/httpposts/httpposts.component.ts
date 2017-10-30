@@ -9,8 +9,9 @@ import { Http } from '@angular/http';
 export class HttppostsComponent implements OnInit {
   typiCodePostResponse: any[];
   courses: any[];
+  countries: any[];
 
-  constructor(http: Http) {
+  constructor(private http: Http) {
     http.get('http://jsonplaceholder.typicode.com/posts')
     .subscribe(response => {
           console.log(response.json());
@@ -22,9 +23,25 @@ export class HttppostsComponent implements OnInit {
           console.log(response.json());
           this.courses = response.json();
     });
+
+    http.get('/api/countries')
+    .subscribe(response => {
+          console.log(response.json());
+          this.countries = response.json();
+    });
   }
 
   ngOnInit() {
   }
 
+  addCountry(input: HTMLInputElement) {
+    const newCountry: any = {name: input.value};
+    this.http.post('api/countries', JSON.stringify(newCountry))
+      .subscribe(response => {
+          this.countries.push(newCountry);
+          console.log(response.json());
+      }
+    );
+    input.value = '';
+  }
 }

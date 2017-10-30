@@ -34,6 +34,7 @@ import { FormcourseComponent } from './formcourse/formcourse.component';
 import { FormsignupComponent } from './formsignup/formsignup.component';
 import { FormarraysComponent } from './formarrays/formarrays.component';
 import { HttppostsComponent } from './httpposts/httpposts.component';
+import { HttpcourseformComponent } from './httpcourseform/httpcourseform.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { HttppostsComponent } from './httpposts/httpposts.component';
     FormcourseComponent,
     FormsignupComponent,
     FormarraysComponent,
-    HttppostsComponent
+    HttppostsComponent,
+    HttpcourseformComponent
   ],
   imports: [
     // MODULES DEPENDENCY
