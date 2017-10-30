@@ -20,38 +20,29 @@ export class HttppostsService {
     return this.http.get(this.apiURL + '/courses');
   }
   getCountries() {
-    return this.http.get(this.apiURL + '/countries');
+    return this.http.get(this.apiURL + '/countries')
+      .catch(this.handleError);
   }
   addCountry(country) {
     return this.http.post(this.apiURL + '/countries', JSON.stringify(country))
-      .catch((error: Response) => {
-        if (error.status === 400) {
-          return Observable.throw(new BadRequestError(error));
-        } else {
-          return Observable.throw(new AppError(error));
-        }
-      });
+      .catch(this.handleError);
   }
   updateCountry(country) {
     return this.http.put('api/countries' + '/' + country.id, JSON.stringify(country))
-      .catch((error: Response) => {
-        if (error.status === 400) {
-          return Observable.throw(new BadRequestError(error));
-        } else if (error.status === 404) {
-          return Observable.throw(new NotFoundError(error));
-        } else {
-          return Observable.throw(new AppError(error));
-        }
-      });
+      .catch(this.handleError);
   }
   deleteCountry(countryId) {
     return this.http.delete(this.apiURL + '/countries' + '/' + countryId)
-      .catch((error: Response) => {
-        if (error.status === 404) {
-          return Observable.throw(new NotFoundError(error));
-        } else {
-          return Observable.throw(new AppError(error));
-        }
-      });
+      .catch(this.handleError);
+  }
+
+  private handleError(error: Response) {
+    if (error.status === 400) {
+      return Observable.throw(new BadRequestError(error));
+    }
+    if (error.status === 404) {
+      return Observable.throw(new NotFoundError(error));
+    }
+    return Observable.throw(new AppError(error));
   }
 }
