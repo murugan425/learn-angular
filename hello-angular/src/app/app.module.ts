@@ -1,3 +1,4 @@
+import { HttppostsService } from './httpposts/httpposts.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -84,7 +85,8 @@ import { HttpcourseformComponent } from './httpcourseform/httpcourseform.compone
   ],
   providers: [
     // SERVICES BEING USED
-    CourseService
+    CourseService,
+    HttppostsService
   ],
   bootstrap: [AppComponent]
 })

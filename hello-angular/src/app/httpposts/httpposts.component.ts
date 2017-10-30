@@ -1,3 +1,4 @@
+import { HttppostsService } from './httpposts.service';
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -11,14 +12,16 @@ export class HttppostsComponent implements OnInit {
   courses: any[];
   countries: any[];
 
-  constructor(private http: Http) {
-    http.get('http://jsonplaceholder.typicode.com/posts')
+  constructor(private service: HttppostsService) {  }
+
+  ngOnInit() {
+    this.service.getTypicodePosts()
     .subscribe(response => {
           console.log(response.json());
           this.typiCodePostResponse = response.json();
     });
 
-    http.get('/api/courses')
+    this.service.getCourses()
     .subscribe(response => {
           console.log(response.json());
           this.courses = response.json();
@@ -27,11 +30,8 @@ export class HttppostsComponent implements OnInit {
     this.getCountries();
   }
 
-  ngOnInit() {
-  }
-
   getCountries() {
-    this.http.get('/api/countries')
+    this.service.getCountries()
     .subscribe(response => {
           console.log(response.json());
           this.countries = response.json();
@@ -40,7 +40,7 @@ export class HttppostsComponent implements OnInit {
 
   addCountry(input: HTMLInputElement) {
     const newCountry: any = {name: input.value};
-    this.http.post('api/countries', JSON.stringify(newCountry))
+    this.service.addCountry(newCountry)
       .subscribe(response => {
           this.countries.push(newCountry);
           console.log(response.json());
@@ -51,7 +51,7 @@ export class HttppostsComponent implements OnInit {
 
   updateCountry(country) {
     const countryName: string = country.name + ' Updated';
-    this.http.put('api/countries' + '/' + country.id, JSON.stringify({id: country.id, name: countryName}))
+    this.service.updateCountry({id: country.id, name: countryName})
       .subscribe(response => {
         console.log(response.json());
       }
@@ -59,7 +59,7 @@ export class HttppostsComponent implements OnInit {
   }
 
   deleteCountry(country) {
-    this.http.delete('api/countries' + '/' + country.id)
+    this.service.deleteCountry(country.id)
       .subscribe(response => {
         console.log('Delete' + country);
         this.countries.splice(this.countries.indexOf(country));
