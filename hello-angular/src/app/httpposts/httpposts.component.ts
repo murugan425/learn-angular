@@ -1,3 +1,9 @@
+/*
+ * @Author: @murugan425
+ * @Date: 2017-10-31 01:58:04
+ * @Last Modified by: @murugan425
+ * @Last Modified time: 2017-10-31 02:01:03
+ */
 import { BadRequestError } from './../common/errors/bad-request-error';
 import { NotFoundError } from './../common/errors/not-found-error';
 import { AppError } from './../common/errors/app-error';
@@ -18,23 +24,25 @@ export class HttppostsComponent implements OnInit {
   constructor(private service: HttppostsService) {  }
 
   ngOnInit() {
-    this.service.getTypicodePosts()
-    .subscribe(response => {
-          console.log(response.json());
-          this.typiCodePostResponse = response.json();
-    });
+    // Commenting out below as this service class is used only for one Domain object.
+    // <Country>
+    // this.service.getTypicodePosts()
+    // .subscribe(response => {
+    //       console.log(response.json());
+    //       this.typiCodePostResponse = response.json();
+    // });
 
-    this.service.getCourses()
-    .subscribe(response => {
-          console.log(response.json());
-          this.courses = response.json();
-    });
+    // this.service.getCourses()
+    // .subscribe(response => {
+    //       console.log(response.json());
+    //       this.courses = response.json();
+    // });
 
     this.getCountries();
   }
 
   getCountries() {
-    this.service.getCountries()
+    this.service.getAll()
       .subscribe(
         response => {
           console.log(response.json());
@@ -47,7 +55,7 @@ export class HttppostsComponent implements OnInit {
 
   addCountry(input: HTMLInputElement) {
     const newCountry: any = {name: input.value};
-    this.service.addCountry(newCountry)
+    this.service.add(newCountry)
       .subscribe(
         response => {
           this.countries.push(newCountry);
@@ -65,7 +73,7 @@ export class HttppostsComponent implements OnInit {
 
   updateCountry(country) {
     const countryName: string = country.name + ' Updated';
-    this.service.updateCountry({id: country.id, name: countryName})
+    this.service.update({id: country.id, name: countryName})
       .subscribe(
         response => {
           console.log(response.json());
@@ -84,7 +92,7 @@ export class HttppostsComponent implements OnInit {
   }
 
   deleteCountry(country) {
-    this.service.deleteCountry(country.id)
+    this.service.delete(country.id)
       .subscribe(
         response => {
           console.log('Delete' + country);
