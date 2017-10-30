@@ -32,38 +32,56 @@ export class HttppostsComponent implements OnInit {
 
   getCountries() {
     this.service.getCountries()
-    .subscribe(response => {
+      .subscribe(
+        response => {
           console.log(response.json());
           this.countries = response.json();
-    });
+        },
+        error => {
+          alert('Unexpected Error occurred.');
+          console.log(error);
+        });
   }
 
   addCountry(input: HTMLInputElement) {
     const newCountry: any = {name: input.value};
     this.service.addCountry(newCountry)
-      .subscribe(response => {
+      .subscribe(
+        response => {
           this.countries.push(newCountry);
           console.log(response.json());
-      }
-    );
+        },
+        error => {
+          alert('Unexpected Error occurred.');
+          console.log(error);
+        });
     input.value = '';
   }
 
   updateCountry(country) {
     const countryName: string = country.name + ' Updated';
     this.service.updateCountry({id: country.id, name: countryName})
-      .subscribe(response => {
-        console.log(response.json());
-      }
-    );
+      .subscribe(
+        response => {
+          console.log(response.json());
+        },
+        error => {
+          alert('Unexpected Error occurred.');
+          console.log(error);
+        });
   }
 
   deleteCountry(country) {
     this.service.deleteCountry(country.id)
-      .subscribe(response => {
-        console.log('Delete' + country);
-        this.countries.splice(this.countries.indexOf(country));
-      });
-      this.getCountries();
+      .subscribe(
+        response => {
+          console.log('Delete' + country);
+          this.countries.splice(this.countries.indexOf(country));
+        },
+        error => {
+          alert('Unexpected Error occurred.');
+          console.log(error);
+        });
+    this.getCountries();
   }
 }
