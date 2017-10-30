@@ -51,9 +51,13 @@ export class HttppostsComponent implements OnInit {
           this.countries.push(newCountry);
           console.log(response.json());
         },
-        error => {
-          alert('Unexpected Error occurred.');
-          console.log(error);
+        (error: Response) => {
+          if (error.status === 400) {
+            // this.form.setError(errors.json());
+          } else {
+            alert('Unexpected Error occurred.');
+            console.log(error);
+          }
         });
     input.value = '';
   }
@@ -66,8 +70,13 @@ export class HttppostsComponent implements OnInit {
           console.log(response.json());
         },
         error => {
-          alert('Unexpected Error occurred.');
-          console.log(error);
+          if (error.status === 404) {
+            alert('This country doesn\'t exists in the system.');
+            console.log(error);
+          } else {
+            alert('Unexpected Error occurred.');
+            console.log(error);
+          }
         });
   }
 
@@ -78,9 +87,14 @@ export class HttppostsComponent implements OnInit {
           console.log('Delete' + country);
           this.countries.splice(this.countries.indexOf(country));
         },
-        error => {
-          alert('Unexpected Error occurred.');
-          console.log(error);
+        (error: Response) => {
+          if (error.status === 404) {
+            alert('This country doesn\'t exists in the system.');
+            console.log(error);
+          } else {
+            alert('Unexpected Error occurred.');
+            console.log(error);
+          }
         });
     this.getCountries();
   }
