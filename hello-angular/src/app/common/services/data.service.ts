@@ -2,7 +2,7 @@
  * @Author: @murugan425
  * @Date: 2017-10-31 01:55:39
  * @Last Modified by: @murugan425
- * @Last Modified time: 2017-10-31 01:57:54
+ * @Last Modified time: 2017-10-31 12:17:39
  */
 import { AppError } from './../errors/app-error';
 import { NotFoundError } from './../errors/not-found-error';
@@ -12,6 +12,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
@@ -19,18 +20,22 @@ export class DataService {
 
   getAll() {
     return this.http.get(this.apiUrl)
+      .map(response => response.json())
       .catch(this.handleError);
   }
   add(resource) {
     return this.http.post(this.apiUrl, JSON.stringify(resource))
+      .map(response => response.json())
       .catch(this.handleError);
   }
   update(resource) {
     return this.http.put(this.apiUrl + '/' + resource.id, JSON.stringify(resource))
+      .map(response => response.json())
       .catch(this.handleError);
   }
   delete(id) {
     return this.http.delete(this.apiUrl + '/' + id)
+      .map(response => response.json())
       .catch(this.handleError);
   }
 

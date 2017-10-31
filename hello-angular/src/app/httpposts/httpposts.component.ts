@@ -2,7 +2,7 @@
  * @Author: @murugan425
  * @Date: 2017-10-31 01:58:04
  * @Last Modified by: @murugan425
- * @Last Modified time: 2017-10-31 02:01:03
+ * @Last Modified time: 2017-10-31 12:47:24
  */
 import { BadRequestError } from './../common/errors/bad-request-error';
 import { NotFoundError } from './../common/errors/not-found-error';
@@ -44,9 +44,9 @@ export class HttppostsComponent implements OnInit {
   getCountries() {
     this.service.getAll()
       .subscribe(
-        response => {
-          console.log(response.json());
-          this.countries = response.json();
+        countriesResp => {
+          console.log(countriesResp);
+          this.countries = countriesResp;
         },
         error => {
           throw error; // Will be handled by the Global AppErrorHandler class
@@ -54,12 +54,13 @@ export class HttppostsComponent implements OnInit {
   }
 
   addCountry(input: HTMLInputElement) {
-    const newCountry: any = {name: input.value};
-    this.service.add(newCountry)
+    const newCountryReq: any = {name: input.value};
+    this.service.add(newCountryReq)
       .subscribe(
-        response => {
-          this.countries.push(newCountry);
-          console.log(response.json());
+        newCountryResp => {
+          // newCountryReq['id'] = newCountryResp.id;
+          this.countries.push(newCountryResp);
+          console.log(newCountryResp);
         },
         (error: Response) => {
           if (error instanceof BadRequestError) {
@@ -75,8 +76,8 @@ export class HttppostsComponent implements OnInit {
     const countryName: string = country.name + ' Updated';
     this.service.update({id: country.id, name: countryName})
       .subscribe(
-        response => {
-          console.log(response.json());
+        countryUpdResp => {
+          console.log(countryUpdResp);
         },
         error => {
           if (error instanceof NotFoundError) {
@@ -94,8 +95,8 @@ export class HttppostsComponent implements OnInit {
   deleteCountry(country) {
     this.service.delete(country.id)
       .subscribe(
-        response => {
-          console.log('Delete' + country);
+        () => { // In case of delete there is no response object.
+          console.log('Delete' + country.id);
           this.countries.splice(this.countries.indexOf(country));
         },
         (error: AppError) => {
