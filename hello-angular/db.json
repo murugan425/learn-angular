@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1"
+    },
+    {
+      "id": 2,
+      "title": "Post 2"
+    },
+    {
+      "id": 3,
+      "title": "Post 3"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "title": "Java",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "title": "Scrum",
+      "category": 2
+    }
+  ],
+  "courseCategory": [
+    {
+      "id": 1,
+      "name": "Technology"
+    },
+    {
+      "id": 2,
+      "name": "Process"
+    }
+  ],
+  "countries": [
+    {
+      "id": 1,
+      "name": "India"
+    },
+    {
+      "id": 2,
+      "name": "Australia"
+    },
+    {
+      "id": 3,
+      "name": "USA"
+    },
+    {
+      "id": 4,
+      "name": "UK"
+    }
+  ]
+}
