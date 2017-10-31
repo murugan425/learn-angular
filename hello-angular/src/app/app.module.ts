@@ -1,3 +1,4 @@
+import { HttpgitpostsService } from './httpgitposts/httpgitposts.service';
 import { AppErrorHandler } from './common/errors/app-error-handler';
 import { HttppostsService } from './httpposts/httpposts.service';
 import { HttpModule } from '@angular/http';
@@ -37,6 +38,8 @@ import { FormsignupComponent } from './formsignup/formsignup.component';
 import { FormarraysComponent } from './formarrays/formarrays.component';
 import { HttppostsComponent } from './httpposts/httpposts.component';
 import { HttpcourseformComponent } from './httpcourseform/httpcourseform.component';
+import { HttpgitpostsComponent } from './httpgitposts/httpgitposts.component';
+import { HttpapisComponent } from './httpapis/httpapis.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +78,9 @@ import { HttpcourseformComponent } from './httpcourseform/httpcourseform.compone
     FormsignupComponent,
     FormarraysComponent,
     HttppostsComponent,
-    HttpcourseformComponent
+    HttpcourseformComponent,
+    HttpgitpostsComponent,
+    HttpapisComponent
   ],
   imports: [
     // MODULES DEPENDENCY
@@ -88,6 +93,7 @@ import { HttpcourseformComponent } from './httpcourseform/httpcourseform.compone
     // SERVICES BEING USED
     CourseService,
     HttppostsService,
+    HttpgitpostsService,
     // MAKE use of APPERRORHANDLER instead of angular defaulr ERRORHANDLER
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
