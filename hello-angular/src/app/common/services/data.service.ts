@@ -2,7 +2,7 @@
  * @Author: @murugan425
  * @Date: 2017-10-31 01:55:39
  * @Last Modified by: @murugan425
- * @Last Modified time: 2017-10-31 12:17:39
+ * @Last Modified time: 2017-10-31 14:18:04
  */
 import { AppError } from './../errors/app-error';
 import { NotFoundError } from './../errors/not-found-error';
@@ -29,7 +29,7 @@ export class DataService {
       .catch(this.handleError);
   }
   update(resource) {
-    return this.http.put(this.apiUrl + '/' + resource.id, JSON.stringify(resource))
+    return this.http.patch(this.apiUrl + '/' + resource.id, JSON.stringify(resource))
       .map(response => response.json())
       .catch(this.handleError);
   }

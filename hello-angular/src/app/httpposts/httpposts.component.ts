@@ -2,7 +2,7 @@
  * @Author: @murugan425
  * @Date: 2017-10-31 01:58:04
  * @Last Modified by: @murugan425
- * @Last Modified time: 2017-10-31 12:47:24
+ * @Last Modified time: 2017-10-31 14:19:27
  */
 import { BadRequestError } from './../common/errors/bad-request-error';
 import { NotFoundError } from './../common/errors/not-found-error';
@@ -55,11 +55,12 @@ export class HttppostsComponent implements OnInit {
 
   addCountry(input: HTMLInputElement) {
     const newCountryReq: any = {name: input.value};
+    input.value = '';
     this.service.add(newCountryReq)
       .subscribe(
         newCountryResp => {
-          // newCountryReq['id'] = newCountryResp.id;
-          this.countries.push(newCountryResp);
+          newCountryReq.id = newCountryResp.id;
+          this.countries.splice(0, 0, newCountryReq);
           console.log(newCountryResp);
         },
         (error: Response) => {
@@ -69,7 +70,6 @@ export class HttppostsComponent implements OnInit {
             throw error;
           }
         });
-    input.value = '';
   }
 
   updateCountry(country) {
