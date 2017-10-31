@@ -2,7 +2,7 @@
  * @Author: @murugan425
  * @Date: 2017-10-31 01:58:04
  * @Last Modified by: @murugan425
- * @Last Modified time: 2017-10-31 14:19:27
+ * @Last Modified time: 2017-10-31 14:30:18
  */
 import { BadRequestError } from './../common/errors/bad-request-error';
 import { NotFoundError } from './../common/errors/not-found-error';
@@ -93,13 +93,17 @@ export class HttppostsComponent implements OnInit {
   }
 
   deleteCountry(country) {
+    // Optimistic approach so that the change reflects quickly in UI without waiting for the server response.
+    this.countries.splice(this.countries.indexOf(country));
+
     this.service.delete(country.id)
       .subscribe(
         () => { // In case of delete there is no response object.
           console.log('Delete' + country.id);
-          this.countries.splice(this.countries.indexOf(country));
         },
         (error: AppError) => {
+          this.countries.splice(this.countries.indexOf(country), 0, country);
+
           if (error instanceof NotFoundError) {
             alert('This country doesn\'t exists in the system.');
             console.log(error);
