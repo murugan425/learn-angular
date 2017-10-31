@@ -1,3 +1,4 @@
+import { HttpgitpostsService } from './httpgitposts/httpgitposts.service';
 import { AppErrorHandler } from './common/errors/app-error-handler';
 import { HttppostsService } from './httpposts/httpposts.service';
 import { HttpModule } from '@angular/http';
@@ -92,6 +93,7 @@ import { HttpapisComponent } from './httpapis/httpapis.component';
     // SERVICES BEING USED
     CourseService,
     HttppostsService,
+    HttpgitpostsService,
     // MAKE use of APPERRORHANDLER instead of angular defaulr ERRORHANDLER
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
