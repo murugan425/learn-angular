@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -40,7 +41,8 @@ import { HttppostsComponent } from './httpposts/httpposts.component';
 import { HttpcourseformComponent } from './httpcourseform/httpcourseform.component';
 import { HttpgitpostsComponent } from './httpgitposts/httpgitposts.component';
 import { HttpapisComponent } from './httpapis/httpapis.component';
-
+import { RouteapiComponent } from './routeapi/routeapi.component';
+import { RoutenavbarComponent } from './routenavbar/routenavbar.component';
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -80,14 +82,21 @@ import { HttpapisComponent } from './httpapis/httpapis.component';
     HttppostsComponent,
     HttpcourseformComponent,
     HttpgitpostsComponent,
-    HttpapisComponent
+    HttpapisComponent,
+    RouteapiComponent,
+    RoutenavbarComponent
   ],
   imports: [
     // MODULES DEPENDENCY
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule// ,
+    // RouterModule.forRoot([
+      // {path: '', component: HttpgitpostsComponent},
+      // {path: '', component: },
+      // {path: '', component: }
+    // ])
   ],
   providers: [
     // SERVICES BEING USED
