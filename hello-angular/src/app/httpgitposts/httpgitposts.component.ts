@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { HttpgitpostsService } from './httpgitposts.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HttpgitpostsComponent implements OnInit {
   followers: any[];
 
-  constructor(private service: HttpgitpostsService) { }
+  constructor(private route: ActivatedRoute, private service: HttpgitpostsService) { }
 
   ngOnInit() {
+
+    this.route.queryParamMap.subscribe(params => {
+      console.log(params.get('page') + '::::' + params.get('order'));
+    });
+
     this.service.getAll()
       .subscribe(followers => {
         this.followers = followers;
