@@ -111,7 +111,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
       {path: 'forms', component: FormsComponent},
       {path: 'crud', component: HttpapisComponent},
       {path: 'followers', component: HttpgitpostsComponent},
-      {path: 'followerprofile/:userid', component: HttpgitprofileComponent},
+      {path: 'followerprofile/:userid/:login', component: HttpgitprofileComponent},
       {path: 'upcoming', component: PageNotCompletedComponent},
       {path: '**', component: PageNotFoundComponent}
     ])
@@ -121,7 +121,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
     CourseService,
     HttppostsService,
     HttpgitpostsService,
-    // MAKE use of APPERRORHANDLER instead of angular defaulr ERRORHANDLER
+    // MAKE use of APPERRORHANDLER instead of angular default ERRORHANDLER
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
