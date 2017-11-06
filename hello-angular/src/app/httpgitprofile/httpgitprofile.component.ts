@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-httpgitprofile',
@@ -8,15 +8,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HttpgitprofileComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private activatedroute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.paramMap
+    this.activatedroute.paramMap
       .subscribe(params => {
         params.get('userid');
         params.get('login');
         console.log(params.get('userid') + '::::' + params.get('login'));
       });
+  }
+
+  goBack() {
+    this.router.navigate(['/followers'], {
+      queryParams: {page: 1, order: 'asc'}
+    });
   }
 
 }

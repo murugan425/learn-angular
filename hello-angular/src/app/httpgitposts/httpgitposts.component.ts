@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpgitpostsService } from './httpgitposts.service';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-httpgitposts',
@@ -19,18 +21,18 @@ export class HttpgitpostsComponent implements OnInit {
       this.route.paramMap,
       this.route.queryParamMap
     ])
-    .subscribe(combResp => {
+    .switchMap(combResp => {
       const id_param = combResp[0].get('id');
       const name_param = combResp[0].get('name');
       console.log(id_param + '::::' + name_param);
       const page_queryparam = combResp[1].get('page');
       const order_queryparam = combResp[1].get('order');
       console.log(page_queryparam + '::::' + order_queryparam);
-      this.service.getAll()
-      .subscribe(followers => {
-        this.followers = followers;
-        console.log(followers);
-      });
+      return this.service.getAll();
+    })
+    .subscribe(followers => {
+      this.followers = followers;
+      console.log(followers);
     });
 
     // this.route.paramMap.subscribe(params => {
