@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -39,8 +40,13 @@ import { FormarraysComponent } from './formarrays/formarrays.component';
 import { HttppostsComponent } from './httpposts/httpposts.component';
 import { HttpcourseformComponent } from './httpcourseform/httpcourseform.component';
 import { HttpgitpostsComponent } from './httpgitposts/httpgitposts.component';
+import { HttpgitprofileComponent } from './httpgitprofile/httpgitprofile.component';
 import { HttpapisComponent } from './httpapis/httpapis.component';
-
+import { RouteapiComponent } from './routeapi/routeapi.component';
+import { RoutenavbarComponent } from './routenavbar/routenavbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotCompletedComponent } from './page-not-completed/page-not-completed.component';
+import { PageHomeComponent } from './page-home/page-home.component';
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -80,21 +86,42 @@ import { HttpapisComponent } from './httpapis/httpapis.component';
     HttppostsComponent,
     HttpcourseformComponent,
     HttpgitpostsComponent,
-    HttpapisComponent
+    HttpgitprofileComponent,
+    HttpapisComponent,
+    RouteapiComponent,
+    RoutenavbarComponent,
+    PageNotFoundComponent,
+    PageNotCompletedComponent,
+    PageHomeComponent
   ],
   imports: [
     // MODULES DEPENDENCY
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {path: '', component: PageHomeComponent},
+      {path: 'course', component: CourseComponent},
+      {path: 'display', component: DisplayComponent},
+      {path: 'events', component: EventComponent},
+      {path: 'pipes', component: CustompipesComponent},
+      {path: 'io', component: IobindComponent},
+      {path: 'directives', component: DirectivesComponent},
+      {path: 'forms', component: FormsComponent},
+      {path: 'crud', component: HttpapisComponent},
+      {path: 'followers', component: HttpgitpostsComponent},
+      {path: 'followerprofile/:userid/:login', component: HttpgitprofileComponent},
+      {path: 'upcoming', component: PageNotCompletedComponent},
+      {path: '**', component: PageNotFoundComponent}
+    ])
   ],
   providers: [
     // SERVICES BEING USED
     CourseService,
     HttppostsService,
     HttpgitpostsService,
-    // MAKE use of APPERRORHANDLER instead of angular defaulr ERRORHANDLER
+    // MAKE use of APPERRORHANDLER instead of angular default ERRORHANDLER
     { provide: ErrorHandler, useClass: AppErrorHandler }
   ],
   bootstrap: [AppComponent]
