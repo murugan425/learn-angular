@@ -47,6 +47,7 @@ import { RoutenavbarComponent } from './routenavbar/routenavbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PageNotCompletedComponent } from './page-not-completed/page-not-completed.component';
 import { PageHomeComponent } from './page-home/page-home.component';
+import { FormloginComponent } from './formlogin/formlogin.component';
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -92,7 +93,8 @@ import { PageHomeComponent } from './page-home/page-home.component';
     RoutenavbarComponent,
     PageNotFoundComponent,
     PageNotCompletedComponent,
-    PageHomeComponent
+    PageHomeComponent,
+    FormloginComponent
   ],
   imports: [
     // MODULES DEPENDENCY
@@ -112,6 +114,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
       {path: 'crud', component: HttpapisComponent},
       {path: 'followers', component: HttpgitpostsComponent},
       {path: 'followerprofile/:userid/:login', component: HttpgitprofileComponent},
+      {path: 'login', component: FormloginComponent},
       {path: 'upcoming', component: PageNotCompletedComponent},
       {path: '**', component: PageNotFoundComponent}
     ])
