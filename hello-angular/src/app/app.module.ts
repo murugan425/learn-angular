@@ -1,3 +1,4 @@
+import { AuthAdminGuardService } from './common/services/auth-admin-guard.service';
 import { AuthGuardService } from './common/services/auth-guard.service';
 import { JwtHelper } from 'angular2-jwt';
 import { MockBackend } from '@angular/http/testing';
@@ -126,6 +127,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
       {path: 'login', component: FormloginComponent},
       {path: 'home', component: PageHomeComponent},
       {path: 'userlanding', component: PageLandingComponent, canActivate: [AuthGuardService]},
+      {path: 'userdetails', component: CustompipesComponent, canActivate: [AuthGuardService, AuthAdminGuardService]},
       {path: 'noaccess', component: PageNotAccessibleComponent},
       {path: 'upcoming', component: PageNotCompletedComponent},
       {path: '**', component: PageNotFoundComponent}
@@ -143,6 +145,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     { provide: Http, useFactory: FakeAuthProviderFactory, deps: [MockBackend, BaseRequestOptions] },
     // AUTHENTICATION/ROUTING/API GUARD SERVICES
     AuthGuardService,
+    AuthAdminGuardService,
     // DEPENDENCY PROVIDERS required for FakeAuthenticationFactory
     MockBackend,
     BaseRequestOptions,

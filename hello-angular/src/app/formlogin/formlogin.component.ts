@@ -14,6 +14,9 @@ export class FormloginComponent implements OnInit {
   constructor(private router: Router, private authService: LoginAuthService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/userlanding']);
+    }
   }
 
   signIn(userCredentials) {

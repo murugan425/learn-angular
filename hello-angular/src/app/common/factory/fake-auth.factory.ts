@@ -3,7 +3,8 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 
 export function FakeAuthProviderFactory(mockBackEnd: MockBackend, reqOptions: BaseRequestOptions) {
     // tslint:disable-next-line:max-line-length
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyMzQ1Njc4OTAiLCJuYW1lIjoiTXVydWdhbiBOYWdhcmFqYW4iLCJhZG1pbiI6dHJ1ZX0.c4kTQ2NInHp9uy96GLQz761_vNz6inbGPKFWRGZmCos';
+    const admintoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyNjQ0MCIsIm5hbWUiOiJNdXJ1Z2FuIE5hZ2FyYWphbiIsImFkbWluIjp0cnVlfQ.JZrogUs3GNEzenoZcgevl9Kj67goSTeOnScwq3ogNYo';
+    const nonadmintoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyNjQ0MCIsIm5hbWUiOiJNdXJ1Z2FuIE5hZ2FyYWphbiIsImFkbWluIjpmYWxzZX0.CYtS5zu87b4nvpx6_vIAKKxcBfwWHXN6ftAcec4Bdds';
     mockBackEnd.connections.subscribe((connection: MockConnection) => {
       // We are using the setTimeout() function to simulate an asynchronous call
       // to the server that takes 1 second.
@@ -19,7 +20,7 @@ export function FakeAuthProviderFactory(mockBackEnd: MockBackend, reqOptions: Ba
               connection.mockRespond(new Response(
                 new ResponseOptions({
                   status: 200,
-                  body: { token: token }
+                  body: { token: admintoken }
                 })
               ));
             } else {

@@ -48,4 +48,8 @@ export class LoginAuthService {
   gotoLoginPage() {
     this.router.navigate(['/login']);
   }
+
+  viewUserInfo() {
+    this.router.navigate(['/userdetails']);
+  }
 }
