@@ -52,7 +52,8 @@ import { PageNotCompletedComponent } from './page-not-completed/page-not-complet
 import { PageHomeComponent } from './page-home/page-home.component';
 import { FormloginComponent } from './formlogin/formlogin.component';
 import { FakeAuthProviderFactory } from './common/factory/fake-auth.factory';
-
+import { PageNotAccessibleComponent } from './page-not-accessible/page-not-accessible.component';
+import { PageLandingComponent } from './page-landing/page-landing.component';
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -99,7 +100,9 @@ import { FakeAuthProviderFactory } from './common/factory/fake-auth.factory';
     PageNotFoundComponent,
     PageNotCompletedComponent,
     PageHomeComponent,
-    FormloginComponent
+    FormloginComponent,
+    PageNotAccessibleComponent,
+    PageLandingComponent
   ],
   imports: [
     // MODULES DEPENDENCY
@@ -120,6 +123,9 @@ import { FakeAuthProviderFactory } from './common/factory/fake-auth.factory';
       {path: 'followers', component: HttpgitpostsComponent},
       {path: 'followerprofile/:userid/:login', component: HttpgitprofileComponent},
       {path: 'login', component: FormloginComponent},
+      {path: 'home', component: PageHomeComponent},
+      {path: 'userlanding', component: PageLandingComponent},
+      {path: 'noaccess', component: PageNotAccessibleComponent},
       {path: 'upcoming', component: PageNotCompletedComponent},
       {path: '**', component: PageNotFoundComponent}
     ])
