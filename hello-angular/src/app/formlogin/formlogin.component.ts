@@ -20,7 +20,7 @@ export class FormloginComponent implements OnInit {
     this.authService.login(userCredentials)
       .subscribe(validUserResp => {
         if (validUserResp) {
-          this.router.navigate(['/']);
+          this.router.navigate(['/userlanding']);
         } else {
           this.invalidLogin = true;
         }

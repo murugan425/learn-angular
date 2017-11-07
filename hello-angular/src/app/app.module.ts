@@ -1,4 +1,4 @@
-
+import { JwtHelper } from 'angular2-jwt';
 import { MockBackend } from '@angular/http/testing';
 import { LoginAuthService } from './common/services/login-auth.service';
 import { HttpgitpostsService } from './httpgitposts/httpgitposts.service';
@@ -142,7 +142,8 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     { provide: Http, useFactory: FakeAuthProviderFactory, deps: [MockBackend, BaseRequestOptions] },
     // DEPENDENCY PROVIDERS required for FakeAuthenticationFactory
     MockBackend,
-    BaseRequestOptions
+    BaseRequestOptions,
+    JwtHelper
   ],
   bootstrap: [AppComponent]
 })
