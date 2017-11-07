@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoginAuthService } from './../common/services/login-auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +11,7 @@ export class FormloginComponent implements OnInit {
 
   invalidLogin: boolean;
 
-  constructor(private router: Router, private authService: LoginAuthService) { }
+  constructor(private router: Router, private authService: LoginAuthService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
@@ -20,7 +20,8 @@ export class FormloginComponent implements OnInit {
     this.authService.login(userCredentials)
       .subscribe(validUserResp => {
         if (validUserResp) {
-          this.router.navigate(['/userlanding']);
+          const returnUrl = this.activeRoute.snapshot.queryParamMap.get('returnUrl');
+          this.router.navigate([returnUrl || '/userlanding']);
         } else {
           this.invalidLogin = true;
         }
