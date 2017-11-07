@@ -1,7 +1,10 @@
+
+import { MockBackend } from '@angular/http/testing';
+import { LoginAuthService } from './common/services/login-auth.service';
 import { HttpgitpostsService } from './httpgitposts/httpgitposts.service';
 import { AppErrorHandler } from './common/errors/app-error-handler';
 import { HttppostsService } from './httpposts/httpposts.service';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -48,6 +51,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PageNotCompletedComponent } from './page-not-completed/page-not-completed.component';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { FormloginComponent } from './formlogin/formlogin.component';
+import { FakeAuthProviderFactory } from './common/factory/fake-auth.factory';
+
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -125,7 +130,13 @@ import { FormloginComponent } from './formlogin/formlogin.component';
     HttppostsService,
     HttpgitpostsService,
     // MAKE use of APPERRORHANDLER instead of angular default ERRORHANDLER
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    // AUTHENTICATION PROVIDERS
+    LoginAuthService,
+    { provide: Http, useFactory: FakeAuthProviderFactory, deps: [MockBackend, BaseRequestOptions] },
+    // DEPENDENCY PROVIDERS required for FakeAuthenticationFactory
+    MockBackend,
+    BaseRequestOptions
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { LoginAuthService } from './../common/services/login-auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormloginComponent implements OnInit {
 
-  constructor() { }
+  invalidLogin: boolean;
+
+  constructor(private router: Router, private authService: LoginAuthService) { }
 
   ngOnInit() {
+  }
+
+  signIn(userCredentials) {
+    this.authService.login(userCredentials)
+      .subscribe(validUserResp => {
+        if (validUserResp) {
+          this.router.navigate(['/']);
+        } else {
+          this.invalidLogin = true;
+        }
+      });
   }
 }
