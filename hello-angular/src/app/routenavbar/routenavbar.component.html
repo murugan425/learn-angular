@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">ANGULAR</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="course">Hello</a></li>
+        <li routerLinkActive="active"><a routerLink="display">Display</a></li>
+        <li routerLinkActive="active"><a routerLink="events">Events</a></li>
+        <li routerLinkActive="active"><a routerLink="pipes">Pipes</a></li>
+        <li routerLinkActive="active"><a routerLink="io">I/O</a></li>
+        <li routerLinkActive="active"><a routerLink="forms">Forms</a></li>
+        <li routerLinkActive="active"><a routerLink="directives">Directives</a></li>
+        <li routerLinkActive="active"><a routerLink="crud"
+             [queryParams]="{page: 1, order: 'asc'}">HttpPosts</a></li> <!-- Add the param values in tsc for binding-->
+        <li routerLinkActive="active"><a routerLink="followers">Routes</a></li>
+        <li routerLinkActive="active"><a routerLink="login">Authenticate</a></li>
+        <li routerLinkActive="active"><a routerLink="upcoming">>>Upcoming<<</a></li>
+      </ul>
+    </div>
+</nav>
