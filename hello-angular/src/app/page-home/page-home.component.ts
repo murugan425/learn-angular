@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
+  authService: LoginAuthService;
 
-  constructor(private authService: LoginAuthService ) { }
+  constructor(authService: LoginAuthService ) {
+    this.authService = authService;
+   }
 
   ngOnInit() {
   }

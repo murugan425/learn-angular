@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-landing.component.css']
 })
 export class PageLandingComponent implements OnInit {
+  authService: LoginAuthService;
 
-  constructor(private authService: LoginAuthService) { }
+  constructor(authService: LoginAuthService) {
+    this.authService = authService;
+  }
 
   ngOnInit() {
   }
