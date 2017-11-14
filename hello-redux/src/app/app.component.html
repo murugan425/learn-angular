@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
-<div>
-  Count: {{ count }}
-  <button (click)="increment()">+</button>
-  <button (click)="decrement()">-</button>
+<div class="container" id="app">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Todo App</h3>
+      <h6 class="card-subtitle mb-2 text-muted">Using Angular with Redux</h6>
+      <app-todo-dashboard></app-todo-dashboard>
+      <app-todo-list></app-todo-list>
+    </div>
+  </div>
 </div>
