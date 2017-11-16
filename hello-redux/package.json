@@ -30,7 +30,8 @@
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14",
     "redux": "3.5.2",
-    "@angular-redux/store": "^6.5.7"
+    "@angular-redux/store": "^6.5.7",
+    "tassign": "^1.0.0"
   },
   "devDependencies": {
     "@angular/cli": "1.4.5",
