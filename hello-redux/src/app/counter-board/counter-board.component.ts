@@ -9,7 +9,7 @@ import { IAppState } from '../app.store';
   styleUrls: ['./counter-board.component.css']
 })
 export class CounterBoardComponent implements OnInit {
-  @select() count: number;
+  @select(s => s.counter.count) count: number;
 
   constructor(private ngRedux: NgRedux<IAppState>) {
   }

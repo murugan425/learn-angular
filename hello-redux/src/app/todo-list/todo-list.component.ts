@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NgRedux, NgReduxModule, select } from '@angular-redux/store';
 import { IAppState } from './../app.store';
 import { TODOACTIONS } from './../app.action';
-import { ITodo } from './../todo';
+import { ITodo } from '../todo/todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -10,7 +10,7 @@ import { ITodo } from './../todo';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  @select() todos;
+  @select(s => s.todoTasks.todos) todos;
   todomodel: ITodo = {
     id: 0,
     description: '',

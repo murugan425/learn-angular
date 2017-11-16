@@ -28,7 +28,7 @@ import { CounterBoardComponent } from './counter-board/counter-board.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>) {
+  constructor(ngRedux: NgRedux<{}>) {
     ngRedux.configureStore(rootReducer, INITIAL_APPSTATE);
   }
 }

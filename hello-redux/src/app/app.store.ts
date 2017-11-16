@@ -1,14 +1,13 @@
+import { ICountAppState, COUNTER_INITIAL_APPSTATE  } from './counter/store';
+import { ITaskAppState, TASK_INITIAL_APPSTATE} from './todo/store';
 import { IAppState } from './app.store';
-import { ITodo } from './todo';
 
 export interface IAppState {
-    todos: ITodo[];
-    lastUpdate: Date;
-    count: number;
+    todoTasks: ITaskAppState;
+    counter: ICountAppState;
 }
 
 export const INITIAL_APPSTATE: IAppState = {
-     todos: [],
-     lastUpdate: null,
-     count: 0
+    todoTasks: TASK_INITIAL_APPSTATE,
+    counter: COUNTER_INITIAL_APPSTATE
 };

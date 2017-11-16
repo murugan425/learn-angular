@@ -9,8 +9,8 @@ import { TODOACTIONS } from './../app.action';
   styleUrls: ['./todo-dashboard.component.css']
 })
 export class TodoDashboardComponent implements OnInit {
-  @select() todos;
-  @select() lastUpdate;
+  @select(s => s.todoTasks.todos) todos;
+  @select(s => s.todoTasks.lastUpdate) lastUpdate;
 
   constructor(private ngRedux: NgRedux<IAppState>) {}
 
