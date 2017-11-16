@@ -1,7 +1,7 @@
-.glyphicon-heart {
+.fa-heart {
     color: #ccc;
 }
 
-.glyphicon-heart.liked {
+.fa-heart.liked {
     color: deeppink;
 }

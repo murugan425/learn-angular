@@ -1,0 +1,15 @@
+<div style="text-align:center">
+    <div *ngIf="authService.isLoggedIn()">
+        <h1> Welcome {{authService.currentUser.name}}!!! </h1>
+        <h4> UserID: {{authService.currentUser.id}}, 
+            Admin Access: 
+            <span *ngIf = "authService.currentUser.admin">YES</span>
+            <span *ngIf = "!authService.currentUser.admin">NO</span> </h4>        
+    </div>
+    <button class="btn btn-primary btn-lg" 
+        *ngIf="authService.isLoggedIn() && authService.currentUser.admin" (click)="authService.viewUserInfo()">VIEW USER DETAILS</button>
+    <button class="btn btn-primary btn-lg" 
+        *ngIf="!authService.isLoggedIn()" (click)="authService.gotoLoginPage()">LOG IN</button>
+    <button class="btn btn-danger btn-lg" 
+        *ngIf="authService.isLoggedIn()" (click)="authService.logout()">LOG OUT</button>    
+</div>
