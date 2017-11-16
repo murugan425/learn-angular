@@ -1,4 +1,5 @@
-import { IAppState, rootReducer, INITIAL_APPSTATE } from './app.store';
+import { IAppState, INITIAL_APPSTATE } from './app.store';
+import { rootReducer } from './app.reducer';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
