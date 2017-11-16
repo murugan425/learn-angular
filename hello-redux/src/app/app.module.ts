@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { TodoDashboardComponent } from './todo-dashboard/todo-dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { CounterBoardComponent } from './counter-board/counter-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoDashboardComponent,
-    TodoListComponent
+    TodoListComponent,
+    CounterBoardComponent
   ],
   imports: [
     BrowserModule,

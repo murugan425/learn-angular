@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgRedux, NgReduxModule, select } from '@angular-redux/store';
 import { IAppState } from './../app.store';
-import { TODOACTIONS, TOGGLE_TODO } from './../app.action';
+import { TODOACTIONS } from './../app.action';
 import { ITodo } from './../todo';
 
 @Component({

@@ -1,15 +1,17 @@
 import { IAppState } from './app.store';
 import { ITodo } from './todo';
-import { TODOACTIONS } from './app.action';
+import { TODOACTIONS, COUNTERACTIONS } from './app.action';
 
 export interface IAppState {
     todos: ITodo[];
     lastUpdate: Date;
+    count: number;
 }
 
 export const INITIAL_APPSTATE: IAppState = {
      todos: [],
-     lastUpdate: null
+     lastUpdate: null,
+     count: 0
 };
 
 export function rootReducer(state: IAppState, action) {
@@ -45,6 +47,10 @@ export function rootReducer(state: IAppState, action) {
                 todos: [],
                 lastUpdate: new Date()
             });
+        case COUNTERACTIONS.INCREMENT:
+            return Object.assign({}, state, {count: state.count + 1});
+        case COUNTERACTIONS.DECREMENT:
+            return Object.assign({}, state, {count: state.count - 1});
     }
     return state;
 }
