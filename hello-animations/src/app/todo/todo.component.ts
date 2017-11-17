@@ -7,13 +7,13 @@ import { trigger, state, transition,  style, animate } from '@angular/animations
   styleUrls: ['./todo.component.css'],
   animations: [
     trigger('fade', [
+      state('void', style({ opacity: 0 })),
+
       transition('void => *', [
-        style({ opacity: 0 }),
         animate(2000)
       ]),
       transition('* => void', [
-        style({ opacity: 1 }),
-        animate(1000, style({ opacity: 0 }))
+        animate(1000)
       ])
     ])
   ]
