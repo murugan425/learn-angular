@@ -1,4 +1,4 @@
-import { fade, slide } from './../animations';
+import { fade, slide, bounceOutLeft } from './../animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css'],
   animations: [
     fade,
-    slide
+    slide,
+    bounceOutLeft
   ]
 })
 export class TodoComponent implements OnInit {
