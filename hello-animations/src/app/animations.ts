@@ -37,3 +37,44 @@ export let bounceOutLeft = trigger('bounceOutLeft', [
         useAnimation(bounceOutLeftAnimation)
     ])
 ]);
+
+// Using Parameters will be useful in case of customized complex animation scenarios.
+export let fadeInWithParamsAnimation = animation([
+        style({ opacity: 0 }),
+        animate('{{duration}} {{easing}}')
+    ], {
+        // default values to these parameters
+    params: {
+        duration: '1s',
+        easing: 'ease-out'
+    }
+});
+
+export let fadeOutWithParamsAnimation = animation([
+    animate('{{duration}} {{easing}}', style({ opacity: 0 }))
+], {
+    // default values to these parameters
+params: {
+    duration: '1s',
+    easing: 'ease-in'
+}
+});
+
+
+export let fadeWithParams = trigger('fadeWithParams', [
+    transition(':enter', [
+        useAnimation(fadeInWithParamsAnimation, {
+            // override the default values - optional params
+            params: {
+                duration: '0.5s',
+            }
+        })
+    ]),
+    transition(':leave', [
+        useAnimation(fadeOutWithParamsAnimation, {
+            params: {
+                duration: '0.5s',
+            }
+        })
+    ])
+]);

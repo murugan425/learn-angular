@@ -1,4 +1,4 @@
-import { fade, slide, bounceOutLeft } from './../animations';
+import { fade, slide, bounceOutLeft, fadeWithParams } from './../animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   animations: [
     fade,
     slide,
-    bounceOutLeft
+    bounceOutLeft,
+    fadeWithParams
   ]
 })
 export class TodoComponent implements OnInit {
