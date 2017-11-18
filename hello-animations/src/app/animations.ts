@@ -10,9 +10,9 @@ export let fade = trigger('fade', [
 export let slide = trigger('slide', [
     transition(':enter', [
         style({ transform: 'translateX(-10px)'}),
-        animate('0.5s')
+        animate('2s ease-out')
     ]),
     transition(':leave', [
-        animate('0.5s', style({ transform: 'translateX(-50%)'}))
+        animate('2s ease-in', style({ transform: 'translateX(-100%)'}))
     ])
 ]);
