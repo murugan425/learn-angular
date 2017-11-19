@@ -1,0 +1,4 @@
+{
+	"payload": "[{\"type\":\"ADD_TODO\",\"todo\":{\"id\":3,\"description\":\"Task4\",\"assigned\":\"Wei\",\"priority\":\"low\",\"isCompleted\":false}},{\"type\":\"TOGGLE_TODO\",\"id\":1},{\"type\":\"TOGGLE_TODO\",\"id\":1},{\"type\":\"ADD_TODO\",\"todo\":{\"id\":3,\"description\":\"Task4\",\"assigned\":\"Wei\",\"priority\":\"low\",\"isCompleted\":false}},{\"type\":\"ADD_TODO\",\"todo\":{\"id\":3,\"description\":\"Task4\",\"assigned\":\"Wei\",\"priority\":\"low\",\"isCompleted\":false}},{\"type\":\"TOGGLE_TODO\",\"id\":3},{\"type\":\"REMOVE_TODO\",\"id\":3},{\"type\":\"INCREMENT\"},{\"type\":\"DECREMENT\"},{\"type\":\"ADD_TODO\",\"todo\":{\"id\":3,\"description\":\"Task4\",\"assigned\":\"Wei\",\"priority\":\"low\",\"isCompleted\":false}},{\"type\":\"INCREMENT\"}]",
+	"preloadedState": "{\"todoTasks\":{\"todos\":[],\"lastUpdate\":null},\"counter\":{\"count\":0}}"
+}
