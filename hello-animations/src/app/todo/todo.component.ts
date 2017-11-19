@@ -1,4 +1,4 @@
-import { transition, trigger, query, style, animate, animateChild, group } from '@angular/animations';
+import { transition, trigger, query, style, animate, animateChild, group, stagger } from '@angular/animations';
 import { fade, slide, bounceOutLeft, fadeWithParams } from './../animations';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +14,8 @@ import { Component, OnInit } from '@angular/core';
             style({ transform: 'translateY(-20px)' }),
             animate('1s')
           ]),
-          query('@bounceOutLeft', animateChild())
+          query('@bounceOutLeft',
+            stagger('1s', animateChild()))
         ])
       ])
     ]),

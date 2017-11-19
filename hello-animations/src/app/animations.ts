@@ -52,12 +52,12 @@ export let fadeInWithParamsAnimation = animation([
 
 export let fadeOutWithParamsAnimation = animation([
     animate('{{duration}} {{easing}}', style({ opacity: 0 }))
-], {
-    // default values to these parameters
-params: {
-    duration: '1s',
-    easing: 'ease-in'
-}
+    ], {
+        // default values to these parameters
+    params: {
+        duration: '1s',
+        easing: 'ease-in'
+    }
 });
 
 
