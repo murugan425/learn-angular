@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container" id="app">
-  <div class="card" style="width: 60rem;">
+  <!-- <div class="card" style="width: 60rem;">
     <div class="card-header">
         <h3 class="card-title">Todo App</h3>
         <h6 class="card-subtitle mb-2 text-muted">Angular Animations</h6>
@@ -8,7 +8,7 @@
     <div class="card-body">      
       <app-todo></app-todo>
     </div>
-  </div>
+  </div> -->
   <br>
   <div class="card" style="width: 60rem;">
       <div class="card-header">
@@ -16,7 +16,31 @@
           <h6 class="card-subtitle mb-2 text-muted">Angular Animations</h6>
       </div>
       <div class="card-body"> 
-        <app-zippy></app-zippy>
+        <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-8">
+          <app-zippy title="Lorem Ipsum 1">
+            <p> Lorem ipsum dolor sit amet, 
+            consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+            
+            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
+            vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim 
+            qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+
+            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod 
+          </app-zippy>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-4">
+          <app-zippy title="Lorem Ipsum 2">
+              <p> Lorem ipsum dolor sit amet, 
+              consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
+              magna aliquam erat volutpat. </p>
+              <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+          </app-zippy>
+        </div>
+        </div>
       </div>
   </div>
 </div>

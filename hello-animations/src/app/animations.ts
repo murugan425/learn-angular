@@ -78,3 +78,13 @@ export let fadeWithParams = trigger('fadeWithParams', [
         })
     ])
 ]);
+
+export let zippyExpCollapse = trigger('zippyExpCollapse', [
+    state('collapsed',
+        style({ height: 0, paddingTop: 0, paddingBottom: 0 })
+    ),
+    transition('collapsed => expanded',
+        [animate('300ms ease-out')]),
+    transition('expanded => collapsed',
+        [animate('300ms ease-in')]),
+]);
