@@ -47,6 +47,7 @@ import { HttpcourseformComponent } from './httpcourseform/httpcourseform.compone
 import { HttpgitpostsComponent } from './httpgitposts/httpgitposts.component';
 import { HttpgitprofileComponent } from './httpgitprofile/httpgitprofile.component';
 import { HttpapisComponent } from './httpapis/httpapis.component';
+import { FormcheckboxComponent } from './formcheckbox/formcheckbox.component';
 import { RouteapiComponent } from './routeapi/routeapi.component';
 import { RoutenavbarComponent } from './routenavbar/routenavbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -95,6 +96,8 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     HttppostsComponent,
     HttpcourseformComponent,
     HttpgitpostsComponent,
+    HttpapisComponent,
+    FormcheckboxComponent
     HttpgitprofileComponent,
     HttpapisComponent,
     RouteapiComponent,
