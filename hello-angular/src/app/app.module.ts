@@ -97,7 +97,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     HttpcourseformComponent,
     HttpgitpostsComponent,
     HttpapisComponent,
-    FormcheckboxComponent
+    FormcheckboxComponent,
     HttpgitprofileComponent,
     HttpapisComponent,
     RouteapiComponent,
