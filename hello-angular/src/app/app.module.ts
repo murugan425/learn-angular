@@ -40,6 +40,7 @@ import { HttppostsComponent } from './httpposts/httpposts.component';
 import { HttpcourseformComponent } from './httpcourseform/httpcourseform.component';
 import { HttpgitpostsComponent } from './httpgitposts/httpgitposts.component';
 import { HttpapisComponent } from './httpapis/httpapis.component';
+import { FormcheckboxComponent } from './formcheckbox/formcheckbox.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { HttpapisComponent } from './httpapis/httpapis.component';
     HttppostsComponent,
     HttpcourseformComponent,
     HttpgitpostsComponent,
-    HttpapisComponent
+    HttpapisComponent,
+    FormcheckboxComponent
   ],
   imports: [
     // MODULES DEPENDENCY
