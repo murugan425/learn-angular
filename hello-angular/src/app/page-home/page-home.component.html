@@ -1,0 +1,7 @@
+<div style="text-align:center">
+    <h1> ANGULAR LEARNING HOME PAGE!!! </h1>
+    <button class="btn btn-primary btn-lg" 
+        *ngIf="!authService.isLoggedIn()" (click)="authService.gotoLoginPage()">LOG IN</button>
+    <button class="btn btn-danger btn-lg" 
+        *ngIf="authService.isLoggedIn()" (click)="authService.logout()">LOG OUT</button>
+</div>

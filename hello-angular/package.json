@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "json": "json-server --watch db.json"
+    "json": "json-server --watch db.json",
+    "deploy-gh": "ng build --prod --base-href='https://murugan425.github.io/learn-angular/' && ngh",
+    "deploy-firebase": "ng build --prod && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,11 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "angular2-jwt": "^0.2.3",
     "bootstrap": "^3.3.7",
+    "popper.js": "^1.11.0",
+    "jquery": "^3.1.1",
+    "tether": "^1.4.0",
     "font-awesome": "^4.7.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
