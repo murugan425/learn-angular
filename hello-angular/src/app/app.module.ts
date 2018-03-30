@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
@@ -57,6 +58,7 @@ import { FormloginComponent } from './formlogin/formlogin.component';
 import { FakeAuthProviderFactory } from './common/factory/fake-auth.factory';
 import { PageNotAccessibleComponent } from './page-not-accessible/page-not-accessible.component';
 import { PageLandingComponent } from './page-landing/page-landing.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 @NgModule({
   declarations: [
     // COMPONENT DECLARATIONS
@@ -107,7 +109,8 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     PageHomeComponent,
     FormloginComponent,
     PageNotAccessibleComponent,
-    PageLandingComponent
+    PageLandingComponent,
+    DatepickerComponent
   ],
   imports: [
     // MODULES DEPENDENCY
@@ -115,6 +118,7 @@ import { PageLandingComponent } from './page-landing/page-landing.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       {path: '', component: PageHomeComponent},
       {path: 'course', component: CourseComponent},
