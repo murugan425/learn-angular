@@ -1,0 +1,10 @@
+<form>
+  <label for="countryEntry">Country List</label>
+  <ul class="list-group">
+    <li *ngFor="let country of allCountries">    
+        <input type="checkbox" ngModel name="isSelected" (change) = "toggleSelectedCountries(country)">{{country.name}} : {{country.selected}}
+    </li>
+  </ul>
+  <p>All Countries: {{ allCountries | json }}</p>
+  <p>Selected Items: {{ selectedCountries | json }}</p>
+</form>
