@@ -9,8 +9,8 @@ export class ErrormsgComponent implements OnInit {
 
   constructor() { }
 
+  msg = 'Error Output';
+
   ngOnInit() {
   }
-
-  msg = "Error Ouput"
 }
