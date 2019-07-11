@@ -1,7 +1,5 @@
-app-errormsg {
-    color: red
-}
-
-app-successmsg {
-    color: green
+.message {
+    padding: 20px;
+    background-color: cornsilk;
+    border: 1px solid wheat;    
 }
