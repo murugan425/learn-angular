@@ -5,18 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import { CheckboxComponent } from './material/checkbox/checkbox.component';
 import { HomeComponent } from './components/home/home.component';
+import { BasicComponent } from './components/basic/basic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckboxComponent,
-    HomeComponent
+    HomeComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
