@@ -4,13 +4,21 @@
         "directive-selector": [
             true,
             "attribute",
+<<<<<<< HEAD
             ["app","shop","admin"],
+=======
+            "app",
+>>>>>>> feature/app_shopping
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
+<<<<<<< HEAD
             ["app","shop","admin"],
+=======
+            "app",
+>>>>>>> feature/app_shopping
             "kebab-case"
         ]
     }

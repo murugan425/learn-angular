@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+<<<<<<< HEAD
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 
@@ -17,6 +18,16 @@ import { ShopNavbarComponent } from './shop-navbar/shop-navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule
+=======
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+>>>>>>> feature/app_shopping
   ],
   providers: [],
   bootstrap: [AppComponent]

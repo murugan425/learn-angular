@@ -9,4 +9,8 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
+<<<<<<< HEAD
   .catch(err => console.error(err));
+=======
+  .catch(err => console.log(err));
+>>>>>>> feature/app_shopping

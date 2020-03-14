@@ -16,8 +16,13 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
+<<<<<<< HEAD
       dir: require('path').join(__dirname, '../coverage/app-shopping'),
       reports: ['html', 'lcovonly', 'text-summary'],
+=======
+      dir: require('path').join(__dirname, '../coverage'),
+      reports: ['html', 'lcovonly'],
+>>>>>>> feature/app_shopping
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
@@ -26,7 +31,13 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
+<<<<<<< HEAD
     singleRun: false,
     restartOnFileChange: true
   });
 };
+=======
+    singleRun: false
+  });
+};
+>>>>>>> feature/app_shopping
