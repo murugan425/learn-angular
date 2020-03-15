@@ -3,4 +3,8 @@
 // Disabling material styles temporarily
 // @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-@import "~bootstrap/dist/css/bootstrap.min.css"
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body { 
+    padding: 1%; 
+}
