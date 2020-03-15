@@ -1,0 +1,12 @@
+<div>
+    <span class="label label-info">One way vs Two way Data binding</span>
+    <div class="form-group">
+        <label for="onewaybind">One Way Binded Text: </label>
+        <input type="text" class="form-control" id="onewaybind" (input)="updateInput($event)">
+    </div>
+    <div class="form-group">
+        <label for="name">Two Way Binded Text: </label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="textValue">
+    </div>
+    <span class="label label-primary">{{textValue}}</span>
+</div>
