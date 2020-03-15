@@ -14,7 +14,7 @@ export class EventbindingComponent implements OnInit {
   }
 
   updateInput(event: Event) {
-    this.textValue = (<HTMLInputElement>event.target).value;
+    this.textValue = (event.target as HTMLInputElement).value;
   }
 
 }
