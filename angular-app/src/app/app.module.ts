@@ -10,13 +10,17 @@ import { FormsModule } from '@angular/forms';
 import { CheckboxComponent } from './material/checkbox/checkbox.component';
 import { HomeComponent } from './components/home/home.component';
 import { BasicComponent } from './components/basic/basic.component';
+import { SuccessalertComponent } from './components/successalert/successalert.component';
+import { WarningalertComponent } from './components/warningalert/warningalert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckboxComponent,
     HomeComponent,
-    BasicComponent
+    BasicComponent,
+    SuccessalertComponent,
+    WarningalertComponent
   ],
   imports: [
     BrowserModule,
