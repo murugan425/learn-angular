@@ -1,2 +1,10 @@
 <button class="btn btn-primary" [disabled]='!enableSubmit'>SUBMIT</button>
-<span class="label label-info">ENABLED AFTER 5 SECS</span>
+<span class="label label-default"
+    [ngClass]="{'label-success': enableSubmit}">
+    {{enableSubmit}} <!--String Interpolation-->
+</span>
+<span class="label label-info">ENABLED AFTER 2 SECS</span>
+<span class="label label-default" 
+    [ngClass]="{'label-success': enableSubmit}" 
+    [innerText]=enableSubmit> <!-- Property Binding-->
+</span>
