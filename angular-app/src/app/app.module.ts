@@ -18,6 +18,7 @@ import { EventbindingComponent } from './databinding/eventbinding/eventbinding.c
 import { BindingsComponent } from './databinding/bindings/bindings.component';
 import { DirectiveComponent } from './directives/directive/directive.component';
 import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.component';
+import { ClassdirectiveComponent } from './directives/classdirective/classdirective.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.compo
     EventbindingComponent,
     BindingsComponent,
     DirectiveComponent,
-    IfdirectiveComponent
+    IfdirectiveComponent,
+    ClassdirectiveComponent
   ],
   imports: [
     BrowserModule,
