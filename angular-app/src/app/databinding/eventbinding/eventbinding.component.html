@@ -5,8 +5,7 @@
         <input type="text" class="form-control" id="onewaybind" (input)="updateInput($event)">
     </div>
     <div class="form-group">
-        <label for="name">Two Way Binded Text: </label>
+        <label for="name">Two Way Binded Text: </label><span class="label label-primary">{{textValue}}</span>
         <input type="text" class="form-control" id="name" [(ngModel)]="textValue">
     </div>
-    <span class="label label-primary">{{textValue}}</span>
 </div>

@@ -1,0 +1,36 @@
+<div>
+    <h4>Different way of Data Bindings</h4>
+    <div>
+        <span class="label label-success">String Interpolation</span>
+        <span class="text-success"> - To display data in the DOM</span>
+    </div>
+    <div>
+        <span class="label label-default">Event Binding</span>
+        <span class="text-muted"> - To handle events like click/inputs triggered by user</span>
+    </div>
+    <div>
+        <span class="label label-primary">Property Binding</span>
+        <span class="text-primary"> - To update/assign variable to html element properties</span>
+    </div>
+    <div>
+        <span class="label label-warning">Two Way Data Binding</span>
+        <span class="text-warning"> - To bind the data between the HTML/DOM and the typescript variables</span>
+    </div>
+</div>
+<div class="form-group">
+    <label for="name">Enter your name: </label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="userName">
+</div>
+
+<div>
+    <span class="text-primary">User Name entered is : </span>
+    <span class="label label-primary">{{userName}}</span>
+</div>
+
+<button class="btn btn-primary" [disabled]="userName===''" (click)="resetUsername()">RESET</button>
+
+<app-strinterpolation></app-strinterpolation>
+
+<app-propbinding></app-propbinding>
+
+<app-eventbinding></app-eventbinding>

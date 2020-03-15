@@ -15,6 +15,7 @@ import { WarningalertComponent } from './components/warningalert/warningalert.co
 import { StrinterpolationComponent } from './databinding/strinterpolation/strinterpolation.component';
 import { PropbindingComponent } from './databinding/propbinding/propbinding.component';
 import { EventbindingComponent } from './databinding/eventbinding/eventbinding.component';
+import { BindingsComponent } from './databinding/bindings/bindings.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EventbindingComponent } from './databinding/eventbinding/eventbinding.c
     WarningalertComponent,
     StrinterpolationComponent,
     PropbindingComponent,
-    EventbindingComponent
+    EventbindingComponent,
+    BindingsComponent
   ],
   imports: [
     BrowserModule,
