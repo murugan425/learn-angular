@@ -4,12 +4,14 @@ import { CheckboxComponent } from './material/checkbox/checkbox.component';
 import { HomeComponent } from './components/home/home.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { BindingsComponent } from './databinding/bindings/bindings.component';
+import { DirectiveComponent } from './directives/directive/directive.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'basics', component: BasicComponent},
   { path: 'bindings', component: BindingsComponent},
+  { path: 'directives', component: DirectiveComponent},
   { path: 'checkbox', component: CheckboxComponent}
 ];
 

@@ -1,0 +1,21 @@
+<div>
+    <span class="label label-success">NGIF</span>
+    <span class="text-success"> - To manipulate the DOM dynamically : Structural Directive </span>
+</div>
+<div>
+    <div *ngIf="displayMsg1; else warningMsg">
+        <app-successalert></app-successalert>
+    </div>
+
+    <div *ngIf="displayMsg2; then successMsg else warningMsg"></div>
+
+    <button class="btn btn-default" (click)="refreshStatus()">SHUFFLE</button>
+
+    <ng-template #successMsg>
+        <app-successalert></app-successalert>
+    </ng-template>
+
+    <ng-template #warningMsg>
+        <app-warningalert></app-warningalert>
+    </ng-template>
+</div>

@@ -16,6 +16,8 @@ import { StrinterpolationComponent } from './databinding/strinterpolation/strint
 import { PropbindingComponent } from './databinding/propbinding/propbinding.component';
 import { EventbindingComponent } from './databinding/eventbinding/eventbinding.component';
 import { BindingsComponent } from './databinding/bindings/bindings.component';
+import { DirectiveComponent } from './directives/directive/directive.component';
+import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { BindingsComponent } from './databinding/bindings/bindings.component';
     StrinterpolationComponent,
     PropbindingComponent,
     EventbindingComponent,
-    BindingsComponent
+    BindingsComponent,
+    DirectiveComponent,
+    IfdirectiveComponent
   ],
   imports: [
     BrowserModule,
