@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { SuccessalertComponent } from './components/successalert/successalert.component';
 import { WarningalertComponent } from './components/warningalert/warningalert.component';
+import { StrinterpolationComponent } from './databinding/strinterpolation/strinterpolation.component';
+import { PropbindingComponent } from './databinding/propbinding/propbinding.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { WarningalertComponent } from './components/warningalert/warningalert.co
     HomeComponent,
     BasicComponent,
     SuccessalertComponent,
-    WarningalertComponent
+    WarningalertComponent,
+    StrinterpolationComponent,
+    PropbindingComponent
   ],
   imports: [
     BrowserModule,

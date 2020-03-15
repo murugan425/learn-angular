@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="name">Enter your name: </label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="userName">
+</div>
+<div class="form-group">
+    <label for="yob">Enter your year of birth: </label>
+    <input type="text" class="form-control" id="yob" [(ngModel)]="birthYear">
+</div>
+<div class="text-primary">{{userName}} is {{currentYear - birthYear}} years. Current Year: {{currentYear}}</div>  
