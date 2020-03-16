@@ -13,6 +13,8 @@ export class DirectiveComponent implements OnInit {
 
   counter = 0;
 
+  eventsLog = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,5 +23,6 @@ export class DirectiveComponent implements OnInit {
   displaySecret() {
     this.displayStatus = !this.displayStatus;
     this.counter++;
+    this.eventsLog.push(new Date());
   }
 }
