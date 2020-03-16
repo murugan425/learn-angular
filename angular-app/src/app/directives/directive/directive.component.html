@@ -1,13 +1,23 @@
 <h4>DIRECTIVES</h4>
 <div>
-    <span class="label label-success">NGIF</span>
+    <span class="label label-success">NGIF & NGFOR</span>
     <span class="text-success"> - To manipulate the DOM dynamically : Structural Directive </span>
 </div>
 <app-ifdirective></app-ifdirective>
 <div>
-    <span class="label label-default">NGSTYLE</span>
+    <span class="label label-default">NGSTYLE & NGCLASS</span>
     <span class="text-muted"> - To dynamically apply css style</span>
 </div>
 <span *ngFor="let item of arr(10)" [ngStyle]="{'padding': '1%'}">
     <app-classdirective></app-classdirective>
 </span>
+
+<div>
+    <button class="btn btn-primary" (click)="displaySecret()">DISPLAY DETAILS</button>
+    <div class="text-primary" *ngIf="displayStatus">
+        "Hidden Detail is ASDFGHJKL"
+       <span class="label" 
+        [ngStyle]="{color:counter>5?'black':'white'}"
+        [ngClass]="{'label-primary':counter>5, 'label-success':counter<=5}">{{counter}}</span>
+    </div>
+</div>

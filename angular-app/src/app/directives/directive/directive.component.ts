@@ -9,9 +9,17 @@ export class DirectiveComponent implements OnInit {
 
   arr = Array;
 
+  displayStatus: boolean;
+
+  counter = 0;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  displaySecret() {
+    this.displayStatus = !this.displayStatus;
+    this.counter++;
+  }
 }
