@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveComponent implements OnInit {
 
+  arr = Array;
+
   constructor() { }
 
   ngOnInit(): void {

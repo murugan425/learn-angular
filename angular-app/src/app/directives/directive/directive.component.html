@@ -8,9 +8,6 @@
     <span class="label label-default">NGSTYLE</span>
     <span class="text-muted"> - To dynamically apply css style</span>
 </div>
-<app-classdirective></app-classdirective>
-<app-classdirective></app-classdirective>
-<app-classdirective></app-classdirective>
-<app-classdirective></app-classdirective>
-<app-classdirective></app-classdirective>
-<app-classdirective></app-classdirective>
+<span *ngFor="let item of arr(10)" [ngStyle]="{'padding': '1%'}">
+    <app-classdirective></app-classdirective>
+</span>
