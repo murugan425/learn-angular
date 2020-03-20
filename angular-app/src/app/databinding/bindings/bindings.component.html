@@ -39,6 +39,8 @@
 
 <app-eventbinding></app-eventbinding>
 
+<app-outputbinding (addNewUser)="createUser($event)"></app-outputbinding>
+
 <!-- Data binding of custom property in components created by us -->
 <!--@Input allows to access a custom property from child component & bind it in parent component -->
 <app-inputbinding *ngFor="let userdetail of userlist" [user]="userdetail"></app-inputbinding>

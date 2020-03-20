@@ -32,4 +32,8 @@ export class BindingsComponent implements OnInit {
   resetUsername() {
     this.userName = '';
   }
+
+  createUser(newUser: User) {
+    this.userlist.push(newUser);
+  }
 }

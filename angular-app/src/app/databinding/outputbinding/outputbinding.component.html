@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="form-group col-xs-4">
+        <label for="name">User Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="userName">
+    </div>
+    <div class="form-group col-xs-4">
+        <label for="age">User Age</label>
+        <input type="text" class="form-control" id="age" [(ngModel)]="userAge">
+    </div>
+    <div class="form-group col-xs-4">
+        <label for="email">Email Id</label>
+        <input type="text" class="form-control" id="email" [(ngModel)]="userEmail">
+    </div>
+    <div class="col-xs-12">
+        <button type="submit" class='btn btn-success' style="margin: 5px;" (click)="addUser()">Submit</button>
+        <button type="submit" class='btn btn-primary' style="margin: 5px;" (click)="resetForm()">Reset</button>
+        <!--(click)="addUser()"-->
+    </div>
+</div>
