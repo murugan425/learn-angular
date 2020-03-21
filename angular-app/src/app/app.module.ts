@@ -21,6 +21,7 @@ import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.compo
 import { ClassdirectiveComponent } from './directives/classdirective/classdirective.component';
 import { InputbindingComponent } from './databinding/inputbinding/inputbinding.component';
 import { OutputbindingComponent } from './databinding/outputbinding/outputbinding.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { OutputbindingComponent } from './databinding/outputbinding/outputbindin
     IfdirectiveComponent,
     ClassdirectiveComponent,
     InputbindingComponent,
-    OutputbindingComponent
+    OutputbindingComponent,
+    LifecycleComponent
   ],
   imports: [
     BrowserModule,
