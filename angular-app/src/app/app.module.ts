@@ -22,6 +22,10 @@ import { ClassdirectiveComponent } from './directives/classdirective/classdirect
 import { InputbindingComponent } from './databinding/inputbinding/inputbinding.component';
 import { OutputbindingComponent } from './databinding/outputbinding/outputbinding.component';
 import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { GamecontrolComponent } from './databinding/assignment/gamecontrol/gamecontrol.component';
+import { OddcontrolComponent } from './databinding/assignment/oddcontrol/oddcontrol.component';
+import { EvencontrolComponent } from './databinding/assignment/evencontrol/evencontrol.component';
+import { GamecontainerComponent } from './databinding/assignment/gamecontainer/gamecontainer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
     ClassdirectiveComponent,
     InputbindingComponent,
     OutputbindingComponent,
-    LifecycleComponent
+    LifecycleComponent,
+    GamecontrolComponent,
+    OddcontrolComponent,
+    EvencontrolComponent,
+    GamecontainerComponent
   ],
   imports: [
     BrowserModule,

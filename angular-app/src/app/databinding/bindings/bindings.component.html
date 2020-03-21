@@ -21,6 +21,7 @@
         <span class="text-success"> - To bind the data in child component property by accessing it from the parent component</span>
     </div>
 </div>
+
 <div class="form-group">
     <label for="name">Enter your name: </label>
     <input type="text" class="form-control" id="name" [(ngModel)]="userName">
@@ -41,6 +42,9 @@
 
 <app-outputbinding (addNewUser)="createUser($event)"></app-outputbinding>
 
+
 <!-- Data binding of custom property in components created by us -->
-<!--@Input allows to access a custom property from child component & bind it in parent component -->
+<!-- @Input allows to access a custom property from child component & bind it in parent component -->
 <app-inputbinding *ngFor="let userdetail of userlist" [user]="userdetail"></app-inputbinding>
+
+<app-gamecontainer></app-gamecontainer>

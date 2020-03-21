@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-12">
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h5>GAME CONTAINER</h5>
+            </div>
+            <div class="panel-body">
+                <app-gamecontrol (counterEvent)="createGameElement($event)"></app-gamecontrol>
+                <div class="col-xs-6">
+                    <app-oddcontrol *ngFor="let counter of oddElements" [oddNumber]="counter"></app-oddcontrol>
+                </div>
+                <div class="col-xs-6">
+                    <app-evencontrol *ngFor="let counter of evenElements" [evenNumber]="counter"></app-evencontrol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
