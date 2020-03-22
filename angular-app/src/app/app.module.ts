@@ -28,6 +28,7 @@ import { EvencontrolComponent } from './databinding/assignment/evencontrol/evenc
 import { GamecontainerComponent } from './databinding/assignment/gamecontainer/gamecontainer.component';
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
 import { BggreenDirective } from './directives/bggreen.directive';
+import { BgblueDirective } from './directives/bgblue.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BggreenDirective } from './directives/bggreen.directive';
     EvencontrolComponent,
     GamecontainerComponent,
     EventloggerComponent,
-    BggreenDirective
+    BggreenDirective,
+    BgblueDirective
   ],
   imports: [
     BrowserModule,
