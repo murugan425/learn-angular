@@ -27,6 +27,7 @@ import { OddcontrolComponent } from './databinding/assignment/oddcontrol/oddcont
 import { EvencontrolComponent } from './databinding/assignment/evencontrol/evencontrol.component';
 import { GamecontainerComponent } from './databinding/assignment/gamecontainer/gamecontainer.component';
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
+import { BggreenDirective } from './directives/bggreen.directive';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EventloggerComponent } from './directives/assignment/eventlogger/eventl
     OddcontrolComponent,
     EvencontrolComponent,
     GamecontainerComponent,
-    EventloggerComponent
+    EventloggerComponent,
+    BggreenDirective
   ],
   imports: [
     BrowserModule,
