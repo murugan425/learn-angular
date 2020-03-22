@@ -12,16 +12,4 @@
     <app-classdirective></app-classdirective>
 </span>
 
-<div>
-    <button class="btn btn-primary" (click)="displaySecret()">DISPLAY DETAILS</button>
-    <div class="text-primary" *ngIf="displayStatus">
-        "Hidden Detail is ASDFGHJKL"
-       <span class="label" 
-        [ngStyle]="{color:counter>5?'black':'white'}"
-        [ngClass]="{'label-primary':counter>5, 'label-success':counter<=5}">{{counter}}</span>
-    </div>
-    <div *ngFor="let eventTime of eventsLog; let i = index">
-        <span class="label label-success">{{i+1}}</span>
-        <span class="label label-info">{{eventTime}}</span>
-    </div>
-</div>
+<app-eventlogger></app-eventlogger>
