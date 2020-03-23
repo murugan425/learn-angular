@@ -9,7 +9,7 @@ export class BgblueDirective implements OnInit {
   @HostBinding('style.color') color: string;
 
   @Input() defaultColorValue = 'transparent';
-  @Input() bgColorValue: string;
+  @Input('appBgblue') bgColorValue: string;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
