@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { BindingsComponent } from './databinding/bindings/bindings.component';
 import { DirectiveComponent } from './directives/directive/directive.component';
+import { ServiceComponent } from './services/service/service.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'basics', component: BasicComponent},
   { path: 'bindings', component: BindingsComponent},
   { path: 'directives', component: DirectiveComponent},
+  { path: 'services', component: ServiceComponent},
   { path: 'checkbox', component: CheckboxComponent}
 ];
 

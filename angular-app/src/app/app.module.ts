@@ -29,6 +29,7 @@ import { GamecontainerComponent } from './databinding/assignment/gamecontainer/g
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
 import { BggreenDirective } from './directives/bggreen.directive';
 import { BgblueDirective } from './directives/bgblue.directive';
+import { ServiceComponent } from './services/service/service.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BgblueDirective } from './directives/bgblue.directive';
     GamecontainerComponent,
     EventloggerComponent,
     BggreenDirective,
-    BgblueDirective
+    BgblueDirective,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
