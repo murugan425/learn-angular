@@ -9,20 +9,9 @@ export class DirectiveComponent implements OnInit {
 
   arr = Array;
 
-  displayStatus: boolean;
-
-  counter = 0;
-
-  eventsLog = [];
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  displaySecret() {
-    this.displayStatus = !this.displayStatus;
-    this.counter++;
-    this.eventsLog.push(new Date());
-  }
 }

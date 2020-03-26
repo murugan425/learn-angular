@@ -12,16 +12,12 @@
     <app-classdirective></app-classdirective>
 </span>
 
-<div>
-    <button class="btn btn-primary" (click)="displaySecret()">DISPLAY DETAILS</button>
-    <div class="text-primary" *ngIf="displayStatus">
-        "Hidden Detail is ASDFGHJKL"
-       <span class="label" 
-        [ngStyle]="{color:counter>5?'black':'white'}"
-        [ngClass]="{'label-primary':counter>5, 'label-success':counter<=5}">{{counter}}</span>
-    </div>
-    <div *ngFor="let eventTime of eventsLog; let i = index">
-        <span class="label label-success">{{i+1}}</span>
-        <span class="label label-info">{{eventTime}}</span>
-    </div>
-</div>
+<app-eventlogger></app-eventlogger>
+
+<div appBggreen>Using custom directive [ElementRef] <span class="text text-danger">'appBggreen'</span> to apply the background color instead of css</div>
+
+<!-- <div appBgblue [bgColorValue]="'#cae9f9'">Using custom directive [Renderer2] <span class="text text-danger">'appBgblue'</span> to apply the background color instead of css</div> -->
+
+<!-- <div appBgblue bgColorValue="#cae9f9">Using custom directive [Renderer2] <span class="text text-danger">'appBgblue'</span> to apply the background color instead of css</div> -->
+
+<div appBgblue="#cae9f9">Using custom directive [Renderer2] <span class="text text-danger">'appBgblue'</span> to apply the background color instead of css</div>

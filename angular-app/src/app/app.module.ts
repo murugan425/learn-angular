@@ -26,6 +26,9 @@ import { GamecontrolComponent } from './databinding/assignment/gamecontrol/gamec
 import { OddcontrolComponent } from './databinding/assignment/oddcontrol/oddcontrol.component';
 import { EvencontrolComponent } from './databinding/assignment/evencontrol/evencontrol.component';
 import { GamecontainerComponent } from './databinding/assignment/gamecontainer/gamecontainer.component';
+import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
+import { BggreenDirective } from './directives/bggreen.directive';
+import { BgblueDirective } from './directives/bgblue.directive';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { GamecontainerComponent } from './databinding/assignment/gamecontainer/g
     GamecontrolComponent,
     OddcontrolComponent,
     EvencontrolComponent,
-    GamecontainerComponent
+    GamecontainerComponent,
+    EventloggerComponent,
+    BggreenDirective,
+    BgblueDirective
   ],
   imports: [
     BrowserModule,
