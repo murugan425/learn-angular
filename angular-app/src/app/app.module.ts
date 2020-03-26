@@ -30,6 +30,8 @@ import { EventloggerComponent } from './directives/assignment/eventlogger/eventl
 import { BggreenDirective } from './directives/bggreen.directive';
 import { BgblueDirective } from './directives/bgblue.directive';
 import { ServiceComponent } from './services/service/service.component';
+import { AccountComponent } from './services/account/account.component';
+import { NewaccountComponent } from './services/newaccount/newaccount.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ServiceComponent } from './services/service/service.component';
     EventloggerComponent,
     BggreenDirective,
     BgblueDirective,
-    ServiceComponent
+    ServiceComponent,
+    AccountComponent,
+    NewaccountComponent
   ],
   imports: [
     BrowserModule,
