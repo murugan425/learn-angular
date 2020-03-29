@@ -5,17 +5,25 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
 
-  activateCount = 0;
-  deactivateCount = 0;
+  activateCount: any;
+  deactivateCount: any;
+  counts = {active: 0, inactive: 0};
 
-  constructor() { }
+  constructor() {
+    this.activateCount = 0;
+    this.deactivateCount = 0;
+    this.counts.active = 0;
+    this.counts.inactive = 0;
+  }
 
   userActivated() {
+    this.counts.active++;
     this.activateCount = this.activateCount + 1;
     console.log(' ACTIVE : ' + this.activateCount);
   }
 
   userDeactivated() {
+    this.counts.inactive++;
     this.deactivateCount++;
     console.log(' DEACTIVE : ' + this.deactivateCount);
   }

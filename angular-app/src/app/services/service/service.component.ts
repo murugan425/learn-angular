@@ -13,8 +13,10 @@ export class ServiceComponent implements OnInit {
   accounts: Array<{name: string, status: string}> = [];
   activeUsers = [];
   inactiveUsers = [];
-  activateCounts: number;
-  deactivateCounts = 0;
+
+  counter = {active: 0, inactive: 0};
+  activateCounts: any;
+  deactivateCounts: any;
 
   constructor(private accountService: AccountsService,
               private userService: UsersService,
@@ -26,6 +28,7 @@ export class ServiceComponent implements OnInit {
     this.inactiveUsers = this.userService.inactiveUsers;
     this.activateCounts = this.counterService.activateCount;
     this.deactivateCounts = this.counterService.deactivateCount;
+    this.counter = this.counterService.counts;
   }
 
 }
