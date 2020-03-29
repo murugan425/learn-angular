@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AccountsService } from '../accounts.service';
+import { UsersService } from '../users.service';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-service',
@@ -9,24 +11,21 @@ import { AccountsService } from '../accounts.service';
 export class ServiceComponent implements OnInit {
 
   accounts: Array<{name: string, status: string}> = [];
+  activeUsers = [];
+  inactiveUsers = [];
+  activateCounts: number;
+  deactivateCounts = 0;
 
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
-
-  constructor(private accountService: AccountsService) { }
+  constructor(private accountService: AccountsService,
+              private userService: UsersService,
+              private counterService: CounterService) { }
 
   ngOnInit(): void {
     this.accounts = this.accountService.accounts;
-  }
-
-  onSetToInactive(id: number) {
-    this.inactiveUsers.push(this.activeUsers[id]);
-    this.activeUsers.splice(id, 1);
-  }
-
-  onSetToActive(id: number) {
-    this.activeUsers.push(this.inactiveUsers[id]);
-    this.inactiveUsers.splice(id, 1);
+    this.activeUsers = this.userService.activeUsers;
+    this.inactiveUsers = this.userService.inactiveUsers;
+    this.activateCounts = this.counterService.activateCount;
+    this.deactivateCounts = this.counterService.deactivateCount;
   }
 
 }
