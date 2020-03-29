@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Recipe } from '../recipes.model';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-list',
@@ -10,20 +11,11 @@ export class RecipesListComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
-  @Output() recipeItemSelected = new EventEmitter<Recipe>();
-
-  constructor() {
-    this.recipes.push(
-      new Recipe('Hyderabad Biryani', 'Easy Recipe for a spicy Biryani',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hyderabadi_Chicken_Biryani.jpg/1024px-Hyderabadi_Chicken_Biryani.jpg'),
-      new Recipe('Pulihora', 'Pulihora is prepared with tamarind and jaggery',
-        'https://aahaaramonline.com/wp-content/uploads/2019/04/Andhra_Nuvvula_Chintapandu_Pulihora_1.jpg'))
+  constructor(private recipeService: RecipesService) {
   }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
   }
 
-  showRecipeDetails(recipe: Recipe) {
-    this.recipeItemSelected.emit(recipe);
-  }
 }
