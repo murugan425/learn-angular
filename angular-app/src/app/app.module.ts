@@ -34,6 +34,8 @@ import { AccountComponent } from './services/account/account.component';
 import { NewaccountComponent } from './services/newaccount/newaccount.component';
 import { InactiveusersComponent } from './services/assignment/inactiveusers/inactiveusers.component';
 import { ActiveusersComponent } from './services/assignment/activeusers/activeusers.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { ActiveusersComponent } from './services/assignment/activeusers/activeus
     AccountComponent,
     NewaccountComponent,
     ActiveusersComponent,
-    InactiveusersComponent
+    InactiveusersComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
