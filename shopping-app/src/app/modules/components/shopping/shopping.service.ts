@@ -23,4 +23,16 @@ export class ShoppingService {
     this.ingredients.push(ingredient);
     this.ingredientAdded.emit(this.ingredients);
   }
+
+  addIngredients(ingredients: Array<Ingredient>) {
+    // This will emit too many elements, so avoid this.
+    /*
+    ingredients.forEach(ingredient => {
+      this.addIngredient(ingredient);
+    });
+    */
+
+    this.ingredients.push(...ingredients);
+    this.ingredientAdded.emit(this.ingredients);
+  }
 }

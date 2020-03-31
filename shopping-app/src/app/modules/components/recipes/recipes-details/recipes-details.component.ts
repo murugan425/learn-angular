@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipes.model';
-import { ShoppingService } from '../../shopping/shopping.service';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipes-details',
@@ -11,16 +11,14 @@ export class RecipesDetailsComponent implements OnInit {
 
   @Input() selectedRecipe: Recipe;
 
-  constructor(private shoppingService: ShoppingService) { }
+  constructor(private recipeService: RecipesService) { }
 
   ngOnInit(): void {
   }
 
-  // TODO - Don't cross connect of another module service into this module. 
-  // Shopping & Recipes are having their own services as they are different domains in our app.
+
   addToShoppingCart() {
-    this.selectedRecipe.ingredients.forEach(ingredient => {
-      this.shoppingService.addIngredient(ingredient);
-    });
-  }
+      this.recipeService.addIngredientsToShoppingCart(this.selectedRecipe.ingredients);
+  };
+
 }
