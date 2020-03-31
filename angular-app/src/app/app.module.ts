@@ -29,6 +29,11 @@ import { GamecontainerComponent } from './databinding/assignment/gamecontainer/g
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
 import { BggreenDirective } from './directives/bggreen.directive';
 import { BgblueDirective } from './directives/bgblue.directive';
+import { ServiceComponent } from './services/service/service.component';
+import { AccountComponent } from './services/account/account.component';
+import { NewaccountComponent } from './services/newaccount/newaccount.component';
+import { InactiveusersComponent } from './services/assignment/inactiveusers/inactiveusers.component';
+import { ActiveusersComponent } from './services/assignment/activeusers/activeusers.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { BgblueDirective } from './directives/bgblue.directive';
     GamecontainerComponent,
     EventloggerComponent,
     BggreenDirective,
-    BgblueDirective
+    BgblueDirective,
+    ServiceComponent,
+    AccountComponent,
+    NewaccountComponent,
+    ActiveusersComponent,
+    InactiveusersComponent
   ],
   imports: [
     BrowserModule,
