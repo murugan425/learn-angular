@@ -13,8 +13,7 @@ const routes: Routes = [
   { path: 'basics', component: BasicComponent},
   { path: 'bindings', component: BindingsComponent},
   { path: 'directives', component: DirectiveComponent},
-  { path: 'services', component: ServiceComponent},
-  { path: 'checkbox', component: CheckboxComponent}
+  { path: 'services', component: ServiceComponent}
 ];
 
 @NgModule({
