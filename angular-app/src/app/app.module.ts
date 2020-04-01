@@ -36,6 +36,8 @@ import { InactiveusersComponent } from './services/assignment/inactiveusers/inac
 import { ActiveusersComponent } from './services/assignment/activeusers/activeusers.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { UserComponent } from './routing/user/user.component';
+import { RoutesComponent } from './routing/routes/routes.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { FooterComponent } from './navigation/footer/footer.component';
     ActiveusersComponent,
     InactiveusersComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserComponent,
+    RoutesComponent
   ],
   imports: [
     BrowserModule,

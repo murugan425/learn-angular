@@ -9,6 +9,8 @@ import { ServiceComponent } from './services/service/service.component';
 import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.component';
 import { ClassdirectiveComponent } from './directives/classdirective/classdirective.component';
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
+import { UserComponent } from './routing/user/user.component';
+import { RoutesComponent } from './routing/routes/routes.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'services', component: ServiceComponent},
   { path: 'directives/if', component: IfdirectiveComponent},
   { path: 'directives/class', component: ClassdirectiveComponent},
-  { path: 'directives/logger', component: EventloggerComponent}
+  { path: 'directives/logger', component: EventloggerComponent},
+  { path: 'routing', component: RoutesComponent},
+  { path: 'routing/user/:name', component: UserComponent}
 ];
 
 @NgModule({
