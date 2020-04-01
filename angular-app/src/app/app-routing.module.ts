@@ -6,6 +6,9 @@ import { BasicComponent } from './components/basic/basic.component';
 import { BindingsComponent } from './databinding/bindings/bindings.component';
 import { DirectiveComponent } from './directives/directive/directive.component';
 import { ServiceComponent } from './services/service/service.component';
+import { IfdirectiveComponent } from './directives/ifdirective/ifdirective.component';
+import { ClassdirectiveComponent } from './directives/classdirective/classdirective.component';
+import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
 
 
 const routes: Routes = [
@@ -13,7 +16,10 @@ const routes: Routes = [
   { path: 'basics', component: BasicComponent},
   { path: 'bindings', component: BindingsComponent},
   { path: 'directives', component: DirectiveComponent},
-  { path: 'services', component: ServiceComponent}
+  { path: 'services', component: ServiceComponent},
+  { path: 'directives/if', component: IfdirectiveComponent},
+  { path: 'directives/class', component: ClassdirectiveComponent},
+  { path: 'directives/logger', component: EventloggerComponent}
 ];
 
 @NgModule({

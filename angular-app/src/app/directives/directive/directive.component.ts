@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-directive',
@@ -9,9 +11,14 @@ export class DirectiveComponent implements OnInit {
 
   arr = Array;
 
-  constructor() { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  navigateTo(selectedDirective: string) {
+    console.log(selectedDirective);
+    this.router.navigate([selectedDirective], {relativeTo: this.route});
+  }
 }
