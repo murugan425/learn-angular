@@ -12,4 +12,9 @@
             </div>
         </div>
     </ng-template>
+
+    <!-- This will work because the page reloads and the user component is reinialized -->
+    <!-- <a href='routing/user/beta'>Show Beta Profile</a> -->
+
+    <a [routerLink]="['/routing', 'user', 'beta']">Show Beta Profile</a>
 </div>
