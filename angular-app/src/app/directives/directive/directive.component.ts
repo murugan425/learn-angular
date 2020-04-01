@@ -18,7 +18,7 @@ export class DirectiveComponent implements OnInit {
   }
 
   navigateTo(selectedDirective: string) {
-    console.log(selectedDirective);
+    // by default the relativeTo points to the root url.
     this.router.navigate([selectedDirective], {relativeTo: this.route});
   }
 }
