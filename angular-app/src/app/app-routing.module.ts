@@ -12,6 +12,7 @@ import { EventloggerComponent } from './directives/assignment/eventlogger/eventl
 import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
 import { UsereditComponent } from './routing/useredit/useredit.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,9 @@ const routes: Routes = [
       { path: 'user/:name', component: UserComponent},
       { path: 'user/:name/edit', component: UsereditComponent}
     ]
-  }
+  },
+  {path: 'not-found', component: PagenotfoundComponent},
+  {path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({

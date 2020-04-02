@@ -39,6 +39,7 @@ import { FooterComponent } from './navigation/footer/footer.component';
 import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
 import { UsereditComponent } from './routing/useredit/useredit.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { UsereditComponent } from './routing/useredit/useredit.component';
     FooterComponent,
     UserComponent,
     RoutesComponent,
-    UsereditComponent
+    UsereditComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
