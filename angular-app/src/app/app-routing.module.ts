@@ -18,14 +18,20 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'basics', component: BasicComponent},
   { path: 'bindings', component: BindingsComponent},
-  { path: 'directives', component: DirectiveComponent},
+  { path: 'directives', component: DirectiveComponent, children:
+    [
+      { path: 'if', component: IfdirectiveComponent},
+      { path: 'class', component: ClassdirectiveComponent},
+      { path: 'logger', component: EventloggerComponent}
+    ]
+  },
   { path: 'services', component: ServiceComponent},
-  { path: 'directives/if', component: IfdirectiveComponent},
-  { path: 'directives/class', component: ClassdirectiveComponent},
-  { path: 'directives/logger', component: EventloggerComponent},
-  { path: 'routing', component: RoutesComponent},
-  { path: 'routing/user/:name', component: UserComponent},
-  { path: 'routing/user/:name/edit', component: UsereditComponent}
+  { path: 'routing', component: RoutesComponent, children:
+    [
+      { path: 'user/:name', component: UserComponent},
+      { path: 'user/:name/edit', component: UsereditComponent}
+    ]
+  }
 ];
 
 @NgModule({
