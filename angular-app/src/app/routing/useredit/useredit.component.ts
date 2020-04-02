@@ -11,11 +11,6 @@ import { Subscription } from 'rxjs';
 })
 export class UsereditComponent implements OnInit {
 
-  userName: string;
-  userAge: string;
-  userEmail: string;
-  userYob: string;
-
   user: User;
   routeParamSubscription: Subscription;
 
@@ -37,10 +32,7 @@ export class UsereditComponent implements OnInit {
   }
 
   resetForm() {
-    this.userEmail = '';
-    this.userName = '';
-    this.userAge = '';
-    this.userYob = '';
+    this.user = new User('', '', '', '');
   }
 
 }
