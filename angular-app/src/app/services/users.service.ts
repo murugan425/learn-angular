@@ -33,4 +33,9 @@ export class UsersService {
   getUserByName(name: string) {
     return this.userlist.find(user => user.name.toLowerCase() === name.toLowerCase());
   }
+
+  editUser(updatedUser: User) {
+    const userIndex = this.userlist.findIndex(user => user.name.toLowerCase() === updatedUser.name.toLowerCase());
+    if (userIndex) { this.userlist[userIndex] = updatedUser; }
+  }
 }

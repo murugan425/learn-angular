@@ -23,4 +23,8 @@ export class RoutesComponent implements OnInit {
     // by default the relativeTo points to the root url.
     this.router.navigate([username], {relativeTo: this.route});
   }
+
+  editUserProfile(usernameToEdit: string) {
+    this.router.navigate(['user/' + usernameToEdit + '/edit'], {queryParams: {allowEdit: 1}, fragment: 'update', relativeTo: this.route});
+  }
 }

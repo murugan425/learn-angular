@@ -38,6 +38,7 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
+import { UsereditComponent } from './routing/useredit/useredit.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { RoutesComponent } from './routing/routes/routes.component';
     HeaderComponent,
     FooterComponent,
     UserComponent,
-    RoutesComponent
+    RoutesComponent,
+    UsereditComponent
   ],
   imports: [
     BrowserModule,

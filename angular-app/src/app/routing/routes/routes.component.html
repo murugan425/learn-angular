@@ -4,6 +4,12 @@
 
 <hr>
 
-<button class='btn btn-info btn-sm' style="margin: 5px;" (click)="navigateToUserProfile('user/Murugan')"><span class="label label-info">Murugan</span></button>
-<button class='btn btn-info btn-sm' style="margin: 5px;" (click)="navigateToUserProfile('user/mani')"><span class="label label-info">Mani</span></button>
-<button class='btn btn-info btn-sm' style="margin: 5px;" (click)="navigateToUserProfile('user/alpha')"><span class="label label-info">Alpha</span></button>
+<button class='btn btn-info btn' style="margin: 5px;" (click)="navigateToUserProfile('user/Murugan')"><span class="label label-info">Murugan</span></button>
+<span style='cursor: pointer;' class="label label-success" (click)="editUserProfile('Murugan')">Edit</span>
+<button class='btn btn-info btn' style="margin: 5px;" (click)="navigateToUserProfile('user/mani')"><span class="label label-info">Mani</span></button>
+<span style='cursor: pointer;' class="label label-success" (click)="editUserProfile('mani')">Edit</span>
+<button class='btn btn-info btn' style="margin: 5px;" (click)="navigateToUserProfile('user/alpha')"><span class="label label-info">Alpha</span></button>
+<span style='cursor: pointer;' class="label label-success" (click)="editUserProfile('alpha')">Edit</span>
+
+<hr>
+

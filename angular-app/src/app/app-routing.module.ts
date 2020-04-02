@@ -11,6 +11,7 @@ import { ClassdirectiveComponent } from './directives/classdirective/classdirect
 import { EventloggerComponent } from './directives/assignment/eventlogger/eventlogger.component';
 import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
+import { UsereditComponent } from './routing/useredit/useredit.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'directives/class', component: ClassdirectiveComponent},
   { path: 'directives/logger', component: EventloggerComponent},
   { path: 'routing', component: RoutesComponent},
-  { path: 'routing/user/:name', component: UserComponent}
+  { path: 'routing/user/:name', component: UserComponent},
+  { path: 'routing/user/:name/edit', component: UsereditComponent}
 ];
 
 @NgModule({
