@@ -13,6 +13,8 @@ import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
 import { UsereditComponent } from './routing/useredit/useredit.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { GuardsService } from './services/guards.service';
+import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
 
 
 const routes: Routes = [
@@ -21,19 +23,20 @@ const routes: Routes = [
   { path: 'bindings', component: BindingsComponent},
   { path: 'directives', component: DirectiveComponent, children:
     [
-      { path: 'if', component: IfdirectiveComponent},
+      { path: 'if', canActivate: [GuardsService], component: IfdirectiveComponent},
       { path: 'class', component: ClassdirectiveComponent},
       { path: 'logger', component: EventloggerComponent}
     ]
   },
   { path: 'services', component: ServiceComponent},
-  { path: 'routing', component: RoutesComponent, children:
+  { path: 'routing', canActivate: [GuardsService], component: RoutesComponent, children:
     [
       { path: 'user/:name', component: UserComponent},
       { path: 'user/:name/edit', component: UsereditComponent}
     ]
   },
   {path: 'not-found', component: PagenotfoundComponent},
+  {path: 'noaccess', component: PagenotaccessibleComponent},
   {path: '**', redirectTo: 'not-found'}
 ];
 

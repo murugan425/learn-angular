@@ -40,6 +40,7 @@ import { UserComponent } from './routing/user/user.component';
 import { RoutesComponent } from './routing/routes/routes.component';
 import { UsereditComponent } from './routing/useredit/useredit.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
     UserComponent,
     RoutesComponent,
     UsereditComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    PagenotaccessibleComponent
   ],
   imports: [
     BrowserModule,
