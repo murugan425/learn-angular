@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/app/common/model/user.model';
 import { ActivatedRoute, Params, Data } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DirtyCheckGuardService, DirtyComponent } from 'src/app/auth/dirty-check-guard.service';
+import { DirtyComponent } from 'src/app/auth/dirty-check-guard.service';
 
 
 @Component({
