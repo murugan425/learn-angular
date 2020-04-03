@@ -14,6 +14,7 @@ import { UsereditComponent } from './routing/useredit/useredit.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { DirtyCheckGuardService } from './auth/dirty-check-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'routing', canActivate: [AuthGuardService], component: RoutesComponent, children:
     [
       { path: 'user/:name', component: UserComponent},
-      { path: 'user/:name/edit', component: UsereditComponent}
+      { path: 'user/:name/edit', component: UsereditComponent, canDeactivate: [DirtyCheckGuardService]}
     ]
   },
   {path: 'not-found', component: PagenotfoundComponent},

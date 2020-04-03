@@ -3,16 +3,20 @@ import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/app/common/model/user.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { DirtyCheckGuardService, DirtyComponent } from 'src/app/auth/dirty-check-guard.service';
+
 
 @Component({
   selector: 'app-useredit',
   templateUrl: './useredit.component.html',
   styleUrls: ['./useredit.component.scss']
 })
-export class UsereditComponent implements OnInit {
+
+export class UsereditComponent implements OnInit, DirtyComponent {
 
   user: User;
   routeParamSubscription: Subscription;
+  pageDirty = false;
 
   constructor(private userService: UsersService,
               private route: ActivatedRoute) { }
@@ -33,6 +37,14 @@ export class UsereditComponent implements OnInit {
 
   resetForm() {
     this.user = new User('', '', '', '');
+    this.pageDirty = true;
   }
 
+  canDeactivate() {
+    if (this.pageDirty) {
+      return confirm('Do you want to discard the unsaved changes?');
+    } else {
+      return true;
+    }
+  }
 }
