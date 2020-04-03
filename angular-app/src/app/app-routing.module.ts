@@ -35,7 +35,7 @@ const routes: Routes = [
     ]
   },
   {path: 'not-found', component: PagenotfoundComponent},
-  {path: 'noaccess', component: PagenotaccessibleComponent},
+  {path: 'noaccess', component: PagenotaccessibleComponent, data: {errorCode: 401, errorMsg: 'Access Not Allowed'}},
   {path: '**', redirectTo: 'not-found'}
 ];
 
