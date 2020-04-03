@@ -5,6 +5,7 @@ import { RecipesComponent } from './modules/components/recipes/recipes.component
 import { ShoppingComponent } from './modules/components/shopping/shopping.component';
 import { RecipesDetailsComponent } from './modules/components/recipes/recipes-details/recipes-details.component';
 import { RecipeSelectComponent } from './modules/components/recipes/recipe-select/recipe-select.component';
+import { RecipeEditComponent } from './modules/components/recipes/recipe-edit/recipe-edit.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent, children:
     [
       { path: '', component: RecipeSelectComponent},
-      { path: ':id', component: RecipesDetailsComponent}
+      { path: 'new', component: RecipeEditComponent},
+      { path: ':id', component: RecipesDetailsComponent},
+      { path: ':id/edit', component: RecipeEditComponent}
     ]
   },
   { path: 'shopping', component: ShoppingComponent},
