@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
 import { User } from 'src/app/common/model/user.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Data } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DirtyCheckGuardService, DirtyComponent } from 'src/app/auth/dirty-check-guard.service';
 
@@ -12,7 +12,7 @@ import { DirtyCheckGuardService, DirtyComponent } from 'src/app/auth/dirty-check
   styleUrls: ['./useredit.component.scss']
 })
 
-export class UsereditComponent implements OnInit, DirtyComponent {
+export class UsereditComponent implements OnInit, OnDestroy, DirtyComponent {
 
   user: User;
   routeParamSubscription: Subscription;
@@ -25,10 +25,16 @@ export class UsereditComponent implements OnInit, DirtyComponent {
     console.log(this.route.snapshot.queryParams);
     console.log(this.route.snapshot.fragment);
 
+    /*
     this.routeParamSubscription =  this.route.params.subscribe(
       (params: Params) => {
         this.user = this.userService.getUserByName(params.name);
-      });
+    });
+    */
+
+    this.route.data.subscribe(
+      (data: Data) => this.user = data.user
+    );
   }
 
   editUser() {
@@ -46,5 +52,9 @@ export class UsereditComponent implements OnInit, DirtyComponent {
     } else {
       return true;
     }
+  }
+
+  ngOnDestroy(): void {
+    // this.routeParamSubscription.unsubscribe();
   }
 }

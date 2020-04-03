@@ -15,6 +15,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { DirtyCheckGuardService } from './auth/dirty-check-guard.service';
+import { UserresolverService } from './services/userresolver.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -30,8 +31,9 @@ const routes: Routes = [
   { path: 'services', component: ServiceComponent},
   { path: 'routing', canActivate: [AuthGuardService], component: RoutesComponent, children:
     [
-      { path: 'user/:name', component: UserComponent},
-      { path: 'user/:name/edit', component: UsereditComponent, canDeactivate: [DirtyCheckGuardService]}
+      { path: 'user/:name', component: UserComponent, resolve: {user: UserresolverService}},
+      { path: 'user/:name/edit', component: UsereditComponent,
+                    canDeactivate: [DirtyCheckGuardService], resolve: {user: UserresolverService}}
     ]
   },
   {path: 'not-found', component: PagenotfoundComponent},
