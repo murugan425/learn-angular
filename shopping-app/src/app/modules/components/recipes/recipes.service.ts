@@ -36,4 +36,12 @@ export class RecipesService {
   addIngredientsToShoppingCart(ingredients: Array<Ingredient>) {
       this.shoppingService.addIngredients(ingredients);
   }
+
+  getRecipeByName(name: string) {
+    return this.recipes.find(recipe => recipe.name.toLowerCase() === name.toLowerCase());
+  }
+
+  getRecipeByIndex(id: number) {
+    return this.recipes[id];
+  }
 }
