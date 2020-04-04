@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
-import { CheckboxComponent } from './material/checkbox/checkbox.component';
 import { HomeComponent } from './components/home/home.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { SuccessalertComponent } from './components/successalert/successalert.component';
@@ -34,11 +33,19 @@ import { AccountComponent } from './services/account/account.component';
 import { NewaccountComponent } from './services/newaccount/newaccount.component';
 import { InactiveusersComponent } from './services/assignment/inactiveusers/inactiveusers.component';
 import { ActiveusersComponent } from './services/assignment/activeusers/activeusers.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './navigation/footer/footer.component';
+import { UserComponent } from './routing/user/user.component';
+import { RoutesComponent } from './routing/routes/routes.component';
+import { UsereditComponent } from './routing/useredit/useredit.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
+import { LoginformComponent } from './forms/loginform/loginform.component';
+import { AngularComponent } from './components/angular/angular.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckboxComponent,
     HomeComponent,
     BasicComponent,
     SuccessalertComponent,
@@ -64,7 +71,16 @@ import { ActiveusersComponent } from './services/assignment/activeusers/activeus
     AccountComponent,
     NewaccountComponent,
     ActiveusersComponent,
-    InactiveusersComponent
+    InactiveusersComponent,
+    HeaderComponent,
+    FooterComponent,
+    UserComponent,
+    RoutesComponent,
+    UsereditComponent,
+    PagenotfoundComponent,
+    PagenotaccessibleComponent,
+    LoginformComponent,
+    AngularComponent
   ],
   imports: [
     BrowserModule,

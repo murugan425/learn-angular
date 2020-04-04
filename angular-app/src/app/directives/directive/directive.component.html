@@ -1,8 +1,11 @@
 <h4>DIRECTIVES</h4>
+
+
 <div>
     <span class="label label-success">NGIF & NGFOR</span>
     <span class="text-success"> - To manipulate the DOM dynamically : Structural Directive </span>
 </div>
+
 <app-ifdirective></app-ifdirective>
 <div>
     <span class="label label-default">NGSTYLE & NGCLASS</span>
@@ -21,3 +24,13 @@
 <!-- <div appBgblue bgColorValue="#cae9f9">Using custom directive [Renderer2] <span class="text text-danger">'appBgblue'</span> to apply the background color instead of css</div> -->
 
 <div appBgblue="#cae9f9">Using custom directive [Renderer2] <span class="text text-danger">'appBgblue'</span> to apply the background color instead of css</div>
+
+<hr>
+<h5>DIRECTIVES - CHILD COMPONENTS</h5>
+<button class='btn btn-success btn-sm' style="margin: 5px;" (click)="navigateTo('if')"><span class="label label-success">IF_DIRECTIVE</span></button>
+<button class='btn btn-success btn-sm' style="margin: 5px;" (click)="navigateTo('class')"><span class="label label-success">CLASS-DIRECIVE</span></button>
+<button class='btn btn-success btn-sm' style="margin: 5px;" (click)="navigateTo('logger')"><span class="label label-success">EVENT-LOGGER</span></button>
+
+<hr>
+<router-outlet></router-outlet>
+<hr>

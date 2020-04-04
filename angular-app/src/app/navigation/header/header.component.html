@@ -1,0 +1,18 @@
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <ul class="nav nav-tabs">
+        <li role="presentation" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/basics">Basics</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/bindings">Bindings</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/directives">Directives</a></li> 
+        <li role="presentation" routerLinkActive="active"><a routerLink="services">Services</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="/routing">Routing</a></li>
+        <!-- Multiple / links can be done by property binding in router link-->
+        <!-- "/pathname" - Absolute path appended to the root domain url e.g: localhost:4200/pathname
+            "pathname" or "./pathname" - Relative path appended to the current url e.g: localhost:4200/componenturl/pathname
+            "../pathname" or "../../pathname" - Navigates back one or two step in the url and get appended to the previous url.
+        -->
+        <!-- <li role="presentation"><a //href="/directives/if"// [routerLink]="['/directives', 'if']">IfDirectives</a></li> -->
+    </ul>
+</div>
+
+    
