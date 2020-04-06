@@ -42,6 +42,7 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotaccessible.component';
 import { LoginformComponent } from './forms/loginform/loginform.component';
 import { AngularComponent } from './components/angular/angular.component';
+import { ObservablesComponent } from './components/observables/observables.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { AngularComponent } from './components/angular/angular.component';
     PagenotfoundComponent,
     PagenotaccessibleComponent,
     LoginformComponent,
-    AngularComponent
+    AngularComponent,
+    ObservablesComponent
   ],
   imports: [
     BrowserModule,
