@@ -16,6 +16,7 @@ import { PagenotaccessibleComponent } from './pages/pagenotaccessible/pagenotacc
 import { AuthGuardService } from './auth/auth-guard.service';
 import { DirtyCheckGuardService } from './auth/dirty-check-guard.service';
 import { UserresolverService } from './services/userresolver.service';
+import { ObservablesComponent } from './components/observables/observables.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
                     canDeactivate: [DirtyCheckGuardService], resolve: {user: UserresolverService}}
     ]
   },
+  { path: 'observables', component: ObservablesComponent},
   {path: 'not-found', component: PagenotfoundComponent},
   {path: 'noaccess', component: PagenotaccessibleComponent, data: {errorCode: 401, errorMsg: 'Access Not Allowed'}},
   {path: '**', redirectTo: 'not-found'}
